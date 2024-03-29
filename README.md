@@ -1,7 +1,7 @@
 # Pocket Docs
 ### It's just a file
 
-THIS IS A WORK IN PROGRESS ICYWW
+(this is a work in progress, icyww)
 
 check out the demo: https://jyoungblood.github.io/pocketdocs
 
