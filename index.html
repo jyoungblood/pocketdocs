@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+
+  <title>Pocket Docs</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./css/tachyons.min.css" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.css" /> -->
+
+  <style>
+
+
+    @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap');
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+
+    .sys-blue {
+      color: blue;
+    }
+
+    .bg-black-95 {
+      background: rgba(0, 0, 0, 0.95);
+    }
+
+    .black-95 {
+      color: rgba(0, 0, 0, 0.95);
+    }
+
+    .normal {}
+
+
+    .sidebar-nav a {
+      padding: 0.25rem;
+    }
+
+    .sidebar-nav a.current {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <!-- custom version of prism: https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+handlebars+markup-templating+nginx+php+sql&plugins=normalize-whitespace+toolbar+copy-to-clipboard -->
+
+  <link rel="stylesheet" href="./css/prism.css" />
+  <script src="./js/prism.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+
+  <!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"> -->
+
+  <style>
+    pre[class*="language-"] {
+      border-radius: 0;
+    }
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+      /* 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
+      font-family: 'Fira Code', monospace;
+      /* 		font-family: 'IBM Plex Mono', monospace; */
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .fira {
+      font-family: 'Fira Code', monospace;
+    }
+
+    .f7 {
+      font-size: .675rem;
+    }
+
+    .sidebar-nav a:hover {
+      text-decoration: underline;
+    }
+
+    a.hover-underline:hover,
+    a.hover-underline:hover span {
+      text-decoration: underline;
+    }
+
+    @media screen and (min-width: 48em) {
+      .content-frame {
+        margin-left: 20%;
+      }
+    }
+
+    .hover-o-50:hover {
+      opacity: 0.5;
+    }
+  </style>
+
+
+</head>
+
+<body class="h-100 sans-serif">
+
+
+
+
+
+
+
+
+
+  <div class="w-20-ns w-100 pa3 h-100-ns overflow-auto-ns fixed-ns top-0 left-0">
+
+    <div class="flex mb2 pl1">
+      <div style="width: 3rem;">
+
+      <a class="black" href="#">
+        <svg class="w-100" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+          stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 7h.01"></path>
+          <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+          <path d="m20 7 2 .5-2 .5"></path>
+          <path d="M10 18v3"></path>
+          <path d="M14 17.75V21"></path>
+          <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
+        </svg>
+      </a>
+
+      </div>
+      <div class="ml1 pl1 pt1 lh-title">
+        <a class="black no-underline hover-underline" href="#">
+          <span class="db f4 fw7">POCKET DOCS</span>
+          <span class="db f6">v0.0.1</span>
+        </a>
+      </div>
+
+    </div>
+
+
+
+    <div class="bw2 bt b--black mb3"></div>
+
+
+
+    <div class="sidebar-nav">
+
+      <div class="mb1">
+        <a href="#installation" class="black no-underline db fw7 f6">Installation / Setup</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#routing" class="black no-underline db fw7 f6">URL Routing</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#routing-http-verbs" class="black no-underline db lh-title">Routing with HTTP verbs</a>
+        <a href="#routing-any-all" class="black no-underline db lh-title">Accepting any/all matching HTTP requests</a>
+        <a href="#parsing-url-parameters" class="black no-underline db lh-title">Parsing URL parameters</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#rendering" class="black no-underline db fw7 f6">Rendering Content</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#render-template" class="black no-underline db lh-title">render_template</a>
+        <a href="#render-json" class="black no-underline db lh-title">render_json</a>
+        <a href="#render" class="black no-underline db lh-title">render</a>
+        <a href="#show-document-at-given-url" class="black no-underline db lh-title">Show a document at a given url</a>
+        <a href="#send-headers" class="black no-underline db lh-title">Send headers</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#templates" class="black no-underline db fw7 f6">Templates</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#basic-variables" class="black no-underline db lh-title">Basic Variables</a>
+        <a href="#iterating-arrays" class="black no-underline db lh-title">Iterating Arrays</a>
+        <a href="#simple-logic" class="black no-underline db lh-title">Simple Logic</a>
+        <a href="#partials" class="black no-underline db lh-title">Partials</a>
+        <a href="#global-layouts" class="black no-underline db lh-title">Global Layouts</a>
+        <a href="#template-locals" class="black no-underline db lh-title">Template Locals</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#handlebars-helpers" class="black no-underline db fw7 f6">Handlebars Helpers</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#hh-lowercase" class="black no-underline db lh-title">lowercase</a>
+        <a href="#hh-addslashes" class="black no-underline db lh-title">addslashes</a>
+        <a href="#hh-nl2br" class="black no-underline db lh-title">nl2br</a>
+        <a href="#hh-to-fixed" class="black no-underline db lh-title">to_fixed</a>
+        <a href="#hh-date" class="black no-underline db lh-title">date</a>
+        <a href="#hh-date-transform" class="black no-underline db lh-title">date_transform</a>
+        <a href="#hh-in-array" class="black no-underline db lh-title">in_array</a>
+        <a href="#hh-if-either" class="black no-underline db lh-title">if_either</a>
+        <a href="#hh-is" class="black no-underline db lh-title">is</a>
+        <a href="#hh-custom" class="black no-underline db lh-title">Custom Helpers</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#requests" class="black no-underline db fw7 f6">HTTP Requests</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#http-request" class="black no-underline db lh-title">http_request</a>
+        <a href="#json-request" class="black no-underline db lh-title">json_request</a>
+        <a href="#api-request" class="black no-underline db lh-title">api_request</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#cookies" class="black no-underline db fw7 f6">Cookies</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#cookie-set" class="black no-underline db lh-title">cookie_set</a>
+        <a href="#cookie-get" class="black no-underline db lh-title">cookie_get</a>
+        <a href="#cookie-delete" class="black no-underline db lh-title">cookie_delete</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#data" class="black no-underline db fw7 f6">Data</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#db-insert" class="black no-underline db lh-title">db_insert</a>
+        <a href="#db-find" class="black no-underline db lh-title">db_find</a>
+        <a href="#db-update" class="black no-underline db lh-title">db_update</a>
+        <a href="#db-delete" class="black no-underline db lh-title">db_delete</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#misc" class="black no-underline db fw7 f6">Misc Helpers</a>
+      </div>
+      <div class="pl1 f7">
+        <a href="#h-email-send" class="black no-underline db lh-title">email_send</a>
+        <a href="#h-client-ip" class="black no-underline db lh-title">client_ip</a>
+        <a href="#h-url_slug" class="black no-underline db lh-title">url_slug</a>
+        <a href="#h-url-strip" class="black no-underline db lh-title">url_strip</a>
+        <a href="#h-url-validate" class="black no-underline db lh-title">url_validate</a>
+        <a href="#h-mysql-date" class="black no-underline db lh-title">mysql_date</a>
+        <a href="#h-video-id" class="black no-underline db lh-title">video_id</a>
+        <a href="#h-br2nl" class="black no-underline db lh-title">br2nl</a>
+        <a href="#h-pagination-query" class="black no-underline db lh-title">pagination_query</a>
+        <a href="#h-pagination-links" class="black no-underline db lh-title">pagination_links</a>
+        <a href="#h-array-encode" class="black no-underline db lh-title">array_encode</a>
+        <a href="#h-array-decode" class="black no-underline db lh-title">array_decode</a>
+      </div>
+
+      <div class="mt2">
+        <a href="#advanced" class="black no-underline db fw7 f6">Advanced</a>
+        <!-- <div class="pl1 f7">
+        </div> -->
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="content-frame w-80-ns w-100 h-100">
+    <div class="h-100 pa3 pl0-ns">
+
+
+
+      <!-- {{!-- css colors: http://davidbau.com/colors/ --}} -->
+
+      <!-- {{!-- lightcyan --}} -->
+      <!-- {{!-- honeydew --}} -->
+      <!-- {{!-- peachpuff --}} -->
+      <!-- {{!-- ghostwhite --}} -->
+
+      <section id="home" class="h-100 relative" style="background: lightcyan;">
+
+
+
+        <div class="dt h-100 center">
+          <div class="dtc h-100 v-mid tc">
+            <div class="mb5">
+              <div class="f1 fw7 mb2">POCKET DOCS</div>
+              <div class="f5">A small and simple documentation template.</div>
+            </div>
+            <a href="https://github.com/jyoungblood/pocketdocs/archive/refs/tags/0.0.1.zip" class="bg-black white pv2 ph3 br2 no-underline hover-underline f6 ">&darr;&nbsp; pocketdocs-0.0.1.zip</a>
+            <div class="mt4 o-90">
+              <a target="_blank" href="https://github.com/jyoungblood/pocketdocs" class="dib f7 fw7 no-underline black hover-underline">
+                <svg style="height: 1.15rem;" class="dib v-mid" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span class="dib v-mid">SOURCE</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+
+
+
+
+
+      <section id="intro" class="black-90">
+
+
+
+
+        <div class="center mw7 mv6 tl lh-copy f4">
+
+          <div class="mb5">
+            <p>Pocket Docs is HTML template for a single-page docs site.</p>
+            <p>It's designed to be simple and easy to use.</p>
+            <p>It's <b>free</b> and <b>open source</b>.</p>
+          </div>
+
+
+
+          <div class="f3 mb3 b">Key Features:</div>
+
+          <div class="flex f5">
+            <div class="pr3 w-50">
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Tachyons</span>
+              </div>
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Prism.js for syntax highlighting</span>
+              </div>
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Nav that keeps up with scrolling</span>
+              </div>
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Single page like KNEX docs</span>
+              </div>
+
+            </div>
+            <div class="pl3 w-50">
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Themeable (at some point...easy to edit for now)</span>
+              </div>
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Semantic markup</span>
+              </div>
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>It's just a single file! (well, aside from the css & js)</span>
+              </div>
+
+              <div class="flex items-start mb3">
+                <span class="fw7 mr1">•</span> <span>Looks nice (and normal) without a lot of work</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </section>
+
+
+
+
+
+      <section id="ethos" class="black-90 bg-black-05 pa5 mb6">
+
+
+        <div class="lh-copy mb4 f3 fw7">Second section with supplemental information or other "before you get started"</div>
+
+
+        Could be any introductory information or links to any resources (theming, choosing an icon, etc)
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="installation">
+
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Installation / Setup</div>
+
+
+        
+
+
+
+        <p class="lh-copy">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+
+
+
+
+
+        <div class="cf mb3">
+
+          <div class="fl w-50 pr3">
+
+            <div class="pt3 fw7 f3 mb2">Installation</div>
+
+            <li class="mb1"><a class="black" href="https://github.com/jyoungblood/stereo/archive/master.zip">Download the files</a></li>
+            <li class="mb1">Add your content</li>
+            <li class="mb1">Edit the style</li>
+
+          </div>
+
+          <div class="fl w-50 pr3">
+
+            <div class="pt3 fw7 f3 mb2">Server Requirements</div>
+
+            <li>Serve HTML</li>
+
+          </div>
+
+        </div>
+
+
+
+        <p class="lh-copy i f7">* NOTE: consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+
+
+
+        <div class="pt3 fw7 f3 mb2">Application Structure</div>
+
+        <p class="lh-copy">
+          Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia.
+        </p>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2">Included libraries</div>
+
+        <p class="lh-copy">
+          Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia.
+        </p>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- fixit stopped here -->
+
+
+      <section class="mb5 pt4" id="routing">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">URL Routing</div>
+        <!-- fixit copy -->
+        <div class="mb3 black-50 lh-copy">something something define what happens a user visits a given url on your
+          site. by default all of the routes are in ./controllers/_routes.php, but as your site grows, you might find it
+          helpful to break that into different files. organize however you like using php includes, just remember to
+          "link" each new php doc/folder you create and keep all that in "controllers". also.</div>
+
+
+        <div class="pt3 fw7 f3 mb2" id="routing-http-verbs">Routing with HTTP verbs</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">You can accept any type of http request and do things with them (really cool if you want to
+          make an actual rest
+          api with http verbs) (all current http verbs are supported, so you can get as specific as you want)</p>
+
+        <pre><code class="language-php">
+	$app->get('/whatever/url/you/define', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->post('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->post('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->put('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->delete('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->patch('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->copy('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->head('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->options('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="routing-any-all">Accepting any/all matching HTTP requests</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">you can do that too (this code will run whenever you try to access this url with any kind of
+          http request)
+        </p>
+
+
+        <pre><code class="language-php">
+	$app->all('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <pre><code class="language-php">
+	$app->any('/whatever/url', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="parsing-url-parameters">Parsing URL parameters</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">also, you can do stuff with regex or whatever to retrieve parameters from the urls. here are
+          a few examples.
+          see the alto router docs for more detailed info (stereo uses <a href="http://altorouter.com/"
+            target="_blank">alto
+            router</a>, so you can parse the parameters in a lot of ways. here are a few examples. refer to the docs for
+          more)
+
+          - https://github.com/dannyvankooten/AltoRouter
+          - how to work w/ the router: https://longren.io/basic-routing-in-php-with-altorouter/
+
+          CHECK IT OUT!!! http://altorouter.com/usage/mapping-routes.html
+        </p>
+
+        <!-- fixit copy -->
+        <p class="lh-copy">With or without the trailing slash:</p>
+
+        <pre><code class="language-php">
+	$app->get('/about/?', function(){
+	  // your PHP code here
+	});
+</code></pre>
+
+
+        <!-- fixit copy -->
+        <p class="lh-copy">Using a url parameter as variable:</p>
+
+        <pre><code class="language-php">
+	$app->get('/register/activate/[*:hash]', function($hash){ 
+	  // url parameter is available to your PHP code as $hash
+	});
+</code></pre>
+
+        <!-- fixit copy -->
+        <p class="lh-copy">And of course you can access _GET vars like normal PHP docs:</p>
+
+        <pre><code class="language-php">
+	$app->get('/directory/search/?', function(){ 
+	  // ex url: http://partyphysics.com/directory/search/?fish=betta&dish=espinacas&planet=keppler-452b
+	  echo $_GET['fish'];  // betta
+	  echo $_GET['dish'];  // espinacas
+	  echo $_GET['planet'];  // keppler-452b
+	});		
+</code></pre>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="rendering">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Rendering Content</div>
+        <!-- 		fixit copy -->
+        <div class="mb3 black-50 lh-copy">once you have a URL route set up, it's a good idea to define what
+          happens there. the sky is almost the limit for what you can do at that point...it just has to be php. here are
+          some cool options!</div>
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="render-template">render_template ($options)</div>
+        <p class="lh-copy">Render a handlebars template with special STEREO abstraction variables () -- future docs: the
+          passwords part of this requires php >= 5.5</p>
+
+
+
+        <pre><code class="language-php">
+	$app->get('/handlebars-stereo', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'planets',
+	    'title' => 'Cool Planets',
+	    'layout' => false,
+	    'data' => array(
+	      'righteous_content' => 'for_sure',
+	      'planets' => array(
+	        'Mercury', 'Venus', 'Earth', 'Nibiru'
+	      )
+	    )
+	  ));
+	});
+</code></pre>
+
+
+        <div class="pt3 fw7 f3 mb2" id="render-json">render_json ($options)</div>
+        <p class="lh-copy">Render an array of data as a JSON string and send with JSON headers (handy for easily making
+          API responses)</p>
+
+
+        <pre><code class="language-php">
+	$app->post('/json-response', function(){
+	  $GLOBALS['app']->render_json(array(
+	    'righteous_content' => 'for sure',
+	    'planets' => array(
+	      'Mercury', 'Venus', 'Earth', 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+
+        <div class="pt3 fw7 f3 mb2" id="render">render ($template_name, $data)</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">Render a handlebars template using a php array for saturation (note this is not attached to
+          the stereo $app
+          class)</p>
+
+
+        <pre><code class="language-php">
+	$app->get('/handlebars-normal', function(){
+	  echo $GLOBALS['engine']->render('handlebars-example', array(
+	    'righteous_content' => 'for sure',
+	    'planets' => array(
+	      'Mercury', 'Venus', 'Earth', 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+
+
+        <!-- 		fixit copy -->
+        <div class="pt3 fw7 f3 mb2" id="show-document-at-given-url">Show a document at a given url</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">want to show just a document? do it like this</p>
+
+
+        <pre><code class="language-php">
+	$app->get('/normal-page', function(){
+	  require __DIR__ . '/pages/whatever.html';
+	});
+</code></pre>
+
+
+
+        <!-- 		fixit copy -->
+        <div class="pt3 fw7 f3 mb2" id="send-headers">Send headers</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">send a header. it can be whatever you want...this is nothing special with the framework, just
+          something good to
+          remember</p>
+
+
+        <pre><code class="language-php">
+	$app->get('/whatever', function(){
+	  header("Location: http://partyphysics.com/");
+	});
+</code></pre>
+
+
+        <!-- 		future: render_error -->
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="templates">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Templates</div>
+        <!-- 		fixit copy -->
+        <div class="mb3 black-50 lh-copy">something something templates go in ./pages and you can call them
+          whatever you want. you can organize this however you want, too! link to handlebars docs for more info.</div>
+
+
+        <div class="pt3 fw7 f3 mb2" id="basic-variables">Basic Variables</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">the simplest thing to do. if you use render_template, stereo includes a few by default (year,
+          etc) as well
+          as a few special things (is_admin, auth, user_id, etc) (title [uses the site title by default, so it's kinda
+          optional])</p>
+
+        <div class="cf">
+          <div class="fl w-50 pr3">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">php</p>
+
+
+            <pre><code class="language-php">
+	$app->get('/variable-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	      'planet' => 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+          </div>
+
+
+          <div class="fl w-50">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs (note about literals { { { } } } vs { { } } -- by default hbars doesn't parse html
+              tags, so if you
+              want to have them rendered, do this)</p>
+
+            <pre><code class="language-handlebars">
+	&lt;h2&gt;Simple Variables Example&lt;/h2&gt;
+	&lt;h3&gt;Cool Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Cool Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Cool Planet: &#123;&#123;planet&#125;&#125;&lt;/h3&gt;
+</code></pre>
+
+          </div>
+
+        </div>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="iterating-arrays">Iterating Arrays</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">it's hella easy, just like a foreach loop. you can even nest the arrays to infinity (and
+          beyond) (sorry) (it
+          can be as simple or complex as you want to make it) (see the demo controller/templates for an example of more
+          complex array iteration)</p>
+
+        <div class="cf">
+          <div class="fl w-50 pr3">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">php (simple & complex example from demo)</p>
+
+            <pre><code class="language-php">
+	$app->get('/array-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'snacks' => array(
+	        'Carrots',
+	        'Hay',
+	        'Sugar Cubes',
+	        'Oats',
+	        'Apples',
+	        'Weaker Horses'
+	      )
+	    )
+	  ));
+	});
+</code></pre>
+
+          </div>
+
+
+          <div class="fl w-50">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs (simple & complex example from demo)</p>
+
+
+            <pre><code class="language-handlebars">
+	&lt;ul&gt;
+	  &#123;&#123;#each snacks&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="simple-logic">Simple Logic</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">you can do some simple logic to check if a variable exists (or has value). if you would like
+          to do more complex
+          logic, check out [if_either], [in_array], [is]</p>
+
+
+        <div class="cf">
+          <div class="fl w-50 pr3">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">php</p>
+
+            <pre><code class="language-php">
+	$app->get('/logic-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	    )
+	  ));
+	});
+</code></pre>
+
+          </div>
+
+
+          <div class="fl w-50">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs (if/else, unless, (normal hbars logic, link to hbars docs) maybe is & link to
+              helpers)</p>
+
+
+            <pre><code class="language-handlebars">
+	&#123;&#123;#if fish&#125;&#125;
+	 Salmon is available
+	&#123;&#123;else&#125;&#125; // this won't show:
+	 No salmon for you.
+	&#123;&#123;/if&#125;&#125;
+	
+	&#123;&#123;#unless snacks&#125;&#125;
+	 No snacks available. We have &#123;&#123;dish&#125;&#125, though.
+	&#123;&#123;else&#125;&#125; // this won't show:
+	 Look at all the snack options:
+	 &#123;&#123;#each snacks&#125;&#125;
+	 - &#123;&#123;this&#125;&#125; &lt;br /&gt;
+	 &#123;&#123;/each&#125;&#125;
+	&#123;&#123;/unless&#125;&#125;
+</code></pre>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="partials">Partials</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">You can include templates in other templates! That is neat! all your partials need to be in
+          the _partials
+          directory, but you can organize that however you want!</p>
+
+        <div class="cf">
+          <div class="fl w-50 pr3">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">normal php whatever example</p>
+
+            <pre><code class="language-php">
+	$app->get('/partials-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	      'planet' => 'Nibiru'
+	    )
+	  ));
+	});
+</code></pre>
+
+          </div>
+
+
+          <div class="fl w-50">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs</p>
+
+
+            <pre><code class="language-handlebars">
+	&lt;h2&gt;Demo page (rendered with partial from separate template)&lt;/h2&gt;
+	
+	&lt;h3&gt;Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
+	
+	&#123;&#123;&gt; planets-partial&#125;&#125;
+</code></pre>
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs (partial code) (see how it has access to the same data?)</p>
+
+
+            <pre><code class="language-handlebars">
+	&lt;ul&gt;
+	  &#123;&#123;#each planets&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="global-layouts">Global Layouts</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">if you want to use a global header footer, you can! you can define as many global
+          wrappers/layouts as you
+          want (like express, django, ember, whatever...wow!) if you leave the "layout" parameter blank, STEREO will use
+          the
+          layout in ./pages/_layouts/base.hbs by default. your content will be rendered where the [[outlet]] part is</p>
+
+
+
+        <!-- 				fixit copy, code comments -->
+        <p class="lh-copy">php example</p>
+
+        <pre><code class="language-php">
+	$app->get('/layouts-example', function(){
+	  $GLOBALS['app']->render_template(array(
+	    'template' => 'demo',
+	    'title' => 'Site Title Whatever',
+	    'layout' => 'admin',  // false for nothing, base by default
+	    'data' => array(
+	      'fish' => 'salmon',
+	      'dish' => 'paella',
+	      'planets' => array(
+	        'Mercury', 'Venus', 'Earth', 'Nibiru'
+	      )
+	    )
+	  ));
+	});
+</code></pre>
+
+
+        <!-- 				fixit copy, code comments -->
+        <p class="lh-copy">hbs (wrapper)</p>
+
+
+        <pre><code class="language-handlebars">
+	&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;head&gt;
+	  &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;
+	  &lt;meta charset="utf-8" /&gt;
+	  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /&gt;
+	  &lt;link rel="stylesheet" href="/css/app.css" /&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	
+	  &lt;div class="header"&gt;&lt;h1&gt;Site Title Whatever&lt;/h1&gt;&lt;/div&gt;
+	
+	  &lt;div class="container"&gt;
+	    [[outlet]]  // this is where the content will be rendered
+	  &lt;/div&gt;
+	
+	  &lt;div class="footer"&gt;(c) &#123;&#123;year&#125;&#125; -- All rights reserved or whatever.&lt;/div&gt;
+	
+	&lt;script src="/js/vendor/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;script src="/js/app.js"&gt;&lt;/script&gt;
+	
+	&lt;/body&gt;
+	&lt;/html&gt;
+</code></pre>
+
+
+        <!-- 				fixit copy, code comments -->
+        <p class="lh-copy">hbs</p>
+
+        <pre><code class="language-handlebars">
+	&lt;h2&gt;Demo page (rendered with global wrapper)&lt;/h2&gt;
+	
+	&lt;h3&gt;Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
+	&lt;h3&gt;Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
+	
+	&lt;ul&gt;
+	  &#123;&#123;#each planets&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="template-locals">Template Locals (Global Variables)</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">need to make an arbitrary variable/array available to all the templates? use
+          $GLOBALS['locals'] (hold for
+          laugh)
+          but seriously, folks, treat it like an array and whatever you need. and if it's an array is something you can
+          iterate over. and, of course, all of this is available to the application as $GLOBALS['locals']['numbers'] or
+          whatever</p>
+
+        <div class="cf">
+          <div class="fl w-50 pr3">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">php example</p>
+
+            <pre><code class="language-php">
+	$GLOBALS['locals']['eat_this'] = "breakfast";
+</code></pre>
+          </div>
+
+
+          <div class="fl w-50">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs</p>
+
+            <pre><code class="language-handlebars">
+	Let's have &#123;&#123;locals.eat_this&#125;&#125; for dinner.
+</code></pre>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="cf">
+          <div class="fl w-50 pr3">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">php example</p>
+
+            <pre><code class="language-php">
+	$GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
+</code></pre>
+
+          </div>
+
+
+          <div class="fl w-50">
+
+            <!-- 				fixit copy -->
+            <p class="lh-copy">hbs</p>
+
+            <pre><code class="language-handlebars">
+	&lt;ul&gt;
+	  &#123;&#123;#each locals.colors&#125;&#125;
+	  &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
+	  &#123;&#123;/each&#125;&#125;
+	&lt;/ul&gt;
+</code></pre>
+
+          </div>
+
+        </div>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="handlebars-helpers">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Handlebars Helpers</div>
+        <!-- 		fixit copy -->
+        <div class="mb3 black-50 lh-copy">You can use handlebars helpers to transform any of your handlebars variables.
+          STEREO includes a handful of common php functions as helpers plus a few special ones. you can write your own,
+          too!
+          it's super easy!</div>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-lowercase">lowercase</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">transform string to lowercase (link to php docs)</p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;lowercase hbar_variable&#125;&#125;
+	// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don't fear the reaper"
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-addslashes">addslashes</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">escape quotes (link to php docs)</p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;addshlashes hbar_variable&#125;&#125;
+	// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "Don\'t Fear The Reaper"
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-nl2br">nl2br</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">note u gotta use 3 curly braces w/ this because it turns plain text to html just F Y I//
+          nl2br
+          // transform line breaks to "br /" ()link to php docs</p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;&#123;nl2br hbar_variable&#125;&#125;&#125;
+	/* 
+	&nbsp;&nbsp; "Don't Fear
+	The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
+	*/
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-to-fixed">to_fixed</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">to_fixed - return given number calculated to given number of decimal places (defaults to 2)
+        </p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;to_fixed hbar_variable&#125;&#125; &nbsp;&nbsp; // 3.14
+	&#123;&#123;to_fixed hbar_variable 4&#125;&#125; &nbsp;// 3.1415
+	&#123;&#123;to_fixed hbar_variable 0&#125;&#125; &nbsp;// 3
+</code></pre>
+
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-date">date</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">parse unix timestamp into human-readable date format (basically php's date()). use "now" for
+          current
+          date/time
+        </p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;date hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "1459036800" &nbsp; ---> &nbsp; "3/27/2015"
+	&#123;&#123;date "now" "m/d/Y"&#125;&#125; &nbsp;// "{{date "now" "m/d/Y"}}"
+</code></pre>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-date-transform">date_transform</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">transform time/date format (same as date, but it turns a string [like a js date object] into
+          unix time
+          first)
+        </p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;date_transform hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "Sun Aug 14 2016 00:00:00 +0000" &nbsp; ---> &nbsp; "8/14/2016"
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-in-array">in_array</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">in_array -- return true(/false) if this item is(/is not) in the array -- can be a csv string,
+          too</p>
+
+        <pre><code class="language-handlebars">
+	/*
+	  colors_array = ['red', 'salmon', 'lilac', 'azul']
+	                    -- or --
+	  colors_array = "red, salmon, lilac, azul"
+	*/
+	
+	&#123;&#123;#in_array "green" colors_array &#125;&#125; 
+	 it's in the array!
+	&#123;&#123;else&#125;&#125; 
+	 it's not in :(
+	&#123;&#123;/in_array&#125;&#125;		
+</code></pre>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-if-either">if_either</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">if_either - return true if the first thing equals either the second or third thing (they
+          could also be hbar_variables)</p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;#if_either hbar_variable "salmon" "azul"&#125;&#125;
+	 it's true :)
+	&#123;&#123;else&#125;&#125;
+	 it's false :(
+	&#123;&#123;/if_either&#125;&#125;
+</code></pre>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-is">is</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">this one has a lot of cool options // is
+          // basic comparison operators
+          you can compare either hbars variables or strings (and use arrays, in some cases)
+          acceptable operators: ==, ===, not, !=, <,>, <=,>=, in, typeof</p>
+
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;#is hbar_variable "==" "paella"&#125;&#125;
+	 yes :)
+	&#123;&#123;else&#125;&#125;
+	 no :(
+	&#123;&#123;/is&#125;&#125;
+</code></pre>
+
+        <!-- fixit copy -->
+        <p class="lh-copy">// will also show if the first thing is contained within the second thing (even it's CSV)
+          (2nd thing can be a
+          string, csv list, or an array)
+          // 2nd param can beither array or csv</p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;#is hbar_variable_1 "in" hbar_variable_2&#125;&#125;
+	 yes :)
+	&#123;&#123;else&#125;&#125;
+	 no :(
+	&#123;&#123;/is&#125;&#125;
+</code></pre>
+        <!-- fixit copy -->
+        <p class="lh-copy">// you can also compare variables by types (array, string, integer, etc) (uses <a
+            href="http://php.net/manual/es/function.gettype.php">php gettype</a></p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;#is hbar_variable_1 "typeof" hbar_variable_2&#125;&#125;
+	 yes :)
+	&#123;&#123;else&#125;&#125;
+	 no :(
+	&#123;&#123;/is&#125;&#125;
+</code></pre>
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="hh-custom">Custom Helpers</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">it's easy, just write a php function and put it in ./controllers/_global.php and then use it
+          in whatever
+          template. look! (you can copy this code as a good starting point). here's a simple example combining a couple
+          simple native php functions. take a look at the handlebars-helpers file to see more examples of how we put
+          together the more complex helpers (we got a lot of these from somewhere, anyone remember where?)</p>
+
+        <p class="lh-copy">php example</p>
+
+
+        <pre><code class="language-php">
+	$engine->addHelper('lowercase_slashes', function($template, $context, $args, $source) {
+	  $parsed_args = $template->parseArguments($args);
+	  return lowercase(addslashes($context->get($parsed_args[0])));
+	});
+</code></pre>
+
+        <!-- 				fixit copy -->
+        <p class="lh-copy">corresponding hbs (wrapper)</p>
+
+        <pre><code class="language-handlebars">
+	&#123;&#123;lowercase_slashes hbar_variable&#125;&#125;
+	// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don\'t fear the reaper"
+</code></pre>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="requests">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">HTTP Requests</div>
+        <!-- fixit copy -->
+        <div class="mb3 black-50 lh-copy">something something it's trivially easy to work with other systems if you use
+          an api! look how easy it is to consume 3rd-party services
+          - a lot of times you might have a need to integrate things you've made with other systems. fortunately,
+          everyone
+          can consume/produce json apis and this is perfect.</div>
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="http-request">http_request ($url, $data)</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">Make an http request to a given url (using curl), send data, return the raw response.</p>
+
+
+        <pre><code class="language-php">
+	$data = $GLOBALS['app']->http_request('https://external-api.com/v3/example-response', array(
+	  'user_id' => 581146,
+	  'api_key' => '696719xvckvzxspigh24y1e-b'
+	));
+</code></pre>
+
+
+        if you need to make a json/http request a GET request instead of post, do this:
+        <!--
+	$wx_data = $GLOBALS['app']->json_request_debug('http://exec-sign.mainstreetbusinessdistrict.com/uploads/streams.json', array(
+		'something' => 'whatever'
+	)[OR false], array('type' => 'GET'));
+-->
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="json-request">json_request ($url, $data)</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">Make an http request to a given url, send data, and return an array of response data (expects
+          response in json
+          format...like the kind sent from render_json). (append _debug to just make an http request and see the raw
+          result)
+        </p>
+
+
+        <pre><code class="language-php">
+	$data = $GLOBALS['app']->json_request('https://external-api.com/v3/example-response', array(
+	  'user_id' => 581146,
+	  'api_key' => '696719xvckvzxspigh24y1e-b'
+	));
+	
+	/* expected response: 
+	  {
+	    first_name: "Eddie",
+	    last_name: "Mercury",
+	    favorite_fish: "Salmon"
+	  }
+	*/
+	
+	print_r($data);
+	
+	/* 
+	  array(
+	    'first_name' => 'Eddie',
+	    'last_name' => 'Mercury',
+	    'favorite_fish' => 'Salmon'
+	  );
+	*/
+</code></pre>
+
+
+        <div class="pt3 fw7 f3 mb2" id="api-request">api_request ($url, $data)</div>
+        <!-- fixit copy -->
+        <p class="lh-copy">Make a json request to a given url, send hard-coded data from cookies <i>(user_id,
+            auth_token, admin_token,
+            moderator_token)</i>. Specialized for use with STEREO patterns/components <i>(coming soon)</i> -- // same as
+          json_request, but in addition to data params, this sends the user_id, auth_token, admin_token, moderator_token
+          set
+          in cookies as those params, uses the $GLOBALS['api_root'] in settings. you can set extra variables to send
+          (like
+          if your api requires a key or whatever...see stereo-core.php, the function called "api_request" obv) (append
+          _debug to just make an http request and see the raw result)</p>
+
+        <pre><code class="language-php">
+	$data = $GLOBALS['app']->api_request('/admin/events/screen', array(
+	  'parameter_1' => 'cool stuff',
+	  'parameter_2' => 'cooler stuff'
+	));
+	
+	/* data sent to api would look something like:
+	  {
+	    user_id: "581146",
+	    admin_token: "123123-1230973t2097sdv",
+	    auth_token: "1203920rdvslasphwg",
+	    moderator_token: false,
+	    parameter_1: "cool stuff",
+	    parameter_2: "cooler stuff"
+	  }
+	*/
+	
+	/* expected response: 
+	  {
+	    first_name: "Eddie",
+	    last_name: "Mercury",
+	    favorite_fish: "Salmon"
+	  }
+	*/
+	
+	print_r($data);
+	
+	/* 
+	  array(
+	    'first_name' => 'Eddie',
+	    'last_name' => 'Mercury',
+	    'favorite_fish' => 'Salmon'
+	  );
+	*/
+</code></pre>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="cookies">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Cookies</div>
+        <!-- 		fixit copy -->
+
+
+        <div class="pt3 fw7 f3 mb2" id="cookie-set">cookie_set ($key, $value, $expiration_date)</div>
+        <p class="lh-copy">Set a cookie for a given amount of time.</p>
+
+        <pre><code class="language-php">
+	$GLOBALS['app']->cookie_set(
+	  'user_name',
+	  'Buzz',  // can be a string or an array or whatever
+	  1461619625  // optional, in unix time format, default is time() + 31536000000
+	);
+</code></pre>
+
+
+        <div class="pt3 fw7 f3 mb2" id="cookie-get">cookie_get ($key)</div>
+        <p class="lh-copy">Return the value of a given cookie.</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->cookie_get('user_name');  // Buzz
+</code></pre>
+
+
+        <div class="pt3 fw7 f3 mb2" id="cookie-delete">cookie_delete ($key)</div>
+        <p class="lh-copy">Delete a given cookie.</p>
+
+        <pre><code class="language-php">
+	$GLOBALS['app']->cookie_delete('user_name');
+</code></pre>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="data">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Data</div>
+        <!-- 		fixit copy -->
+        <div class="mb3 black-50 lh-copy">(something mysql crud functionality, requires pdo (php 5.3+), global
+          functions, not part of the $app class, so use it however it suits you)</div>
+
+
+        <div class="pt3 fw7 f3 mb2" id="db-insert">db_insert ($table, $input)</div>
+        <p class="lh-copy">Sanitize parameters and insert array of data into database. Returns the id of the record
+          created.</p>
+
+        <pre><code class="language-php">
+	$new_id = db_insert("celestial_bodies", array(
+	  'name' => 'Luna',
+	  'classification' => 'moon',
+	  'comment' => 'Earth\'s moon, also commonly referred to as "the moon"'
+	));
+
+	echo $new_id;
+</code></pre>
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="db-find">db_find ($table, $criteria, $options)</div>
+        <!-- 		fixit copy -->
+        <p class="lh-copy">Sanitize parameters and retrieve data from database. (SELECT *) <br />Returns an array with
+          the the data and a
+          total number of results.</p>
+
+        <pre><code class="language-php">
+	$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC LIMIT 8");
+	
+	foreach ($planets['data'] as $p){
+	  echo $p['title'];
+	  echo $p['classification'];
+	  // etc, etc
+	}
+	
+	echo $planets['total'];  // 8
+</code></pre>
+
+        <p class="lh-copy">You can run a raw query (if you need to do joins or anything fancy)</p>
+
+        <pre><code class="language-php">
+	$space_objects = db_find("", "SELECT title, classification FROM celestial_bodies WHERE id IS NOT NULL", array(
+	  'raw' => true
+	));
+</code></pre>
+
+        <p class="lh-copy">If APC is enabled on your system, you can cache your queries</p>
+
+        <pre><code class="language-php">
+	$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC", array(
+	  'cache' => true,
+	  'cache_length' => 120  // optional, in seconds, default is 60
+	));
+</code></pre>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="db-update">db_update ($table, $input, $criteria)</div>
+        <p class="lh-copy">Sanitize parameters and update a database record.</p>
+
+        <pre><code class="language-php">
+	db_update("celestial_bodies", array(
+	  'name' => 'Mars',
+	  'comment' => 'Research "The Phobos Incident" -- we are not alone'
+	), "name='Marz'");
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="db-delete">db_delete ($table, $criteria)</div>
+        <p class="lh-copy">Sanitize parameters and delete a given database record.</p>
+
+        <pre><code class="language-php">
+	db_delete("celestial_bodies", "name='venice'");
+</code></pre>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="mb5 pt4" id="misc">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Misc Helper Functions</div>
+        <!-- fixit copy -->
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-email-send">email_send ($options)</div>
+        <p class="lh-copy">Send an plain text or html email (with mailgun api, if available, otherwise using php mail).
+        </p>
+
+        <pre><code class="language-php">
+	$GLOBALS['app']->email_send(array(
+	  'to' => 'static@hexgirlfriend.com',
+	  'from' => 'sitemeister@partyphysics.com',
+	  'cc' => 'cc-address@partyphysics.com',  // optional
+	  'bcc' => 'bcc-address@partyphysics.com',  // optional
+	  'reply-to' => 'reply-address@partyphysics.com',  // optional
+	  'subject' => 'Send me an email',
+	  'html' => true,  // optional, message will be sent as plain text unless this is true
+	  'message' => 'Right now...&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;RIGHT NOW&lt;/u&gt;&lt;/b&gt;'
+	));
+</code></pre>
+
+
+        update docs: NOW YOU CAN USE TEMPLATES TO MAKE HTML EMAILS!
+
+        <pre><code class="language-php">
+	$GLOBALS['app']->email_send(array(
+		'from' => 'static@hexgirlfriend.com',
+		'to' => 'jonathan.youngblood@gmail.com',
+	
+		'template' => 'mail/test',
+		'layout' => 'mail',
+	// 	'preview' => true,
+	// 	'debug' => true,
+		'data' => array(
+			'email' => 'jonathan.youngblood@gmail.com'
+		),
+	
+	));
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-client-ip">client_ip ()</div>
+        <p class="lh-copy">Return the address of the computer making the current request.</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->client_ip();
+</code></pre>
+        <p class="lh-copy">
+          fixit disclaimer about ip addresses and accuracy (we use a couple of redundant methods, but you can't really
+          trust them in general because of the nature of how ip addresses work...easily spoofable, etc)
+        </p>
+
+
+
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-url-slug">url_slug ($string)</div>
+        <p class="lh-copy">url_slug</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->url_slug();
+</code></pre>
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-url-strip">url_strip ()</div>
+        <p class="lh-copy">url_strip</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->url_strip();
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-url-validate">url_validate ()</div>
+        <p class="lh-copy">url_validate</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->url_validate();
+</code></pre>
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-mysql-date">mysql_date ()</div>
+        <p class="lh-copy">mysql_date</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->mysql_date();
+</code></pre>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-video-id">video_id ()</div>
+        <p class="lh-copy">video_id</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->video_id();
+</code></pre>
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-br2nl">br2nl ()</div>
+        <p class="lh-copy">br2nl</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->br2nl();
+</code></pre>
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-pagination-query">pagination_query ()</div>
+        <p class="lh-copy">pagination_query</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->pagination_query();
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-pagination-links">pagination_links ()</div>
+        <p class="lh-copy">pagination_links</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->pagination_links();
+</code></pre>
+
+
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-array-encode">array_encode ()</div>
+        <p class="lh-copy">array_encode</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->array_encode();
+</code></pre>
+
+
+
+
+        <div class="pt3 fw7 f3 mb2" id="h-array-decode">array_decode ()</div>
+        <p class="lh-copy">array_decode</p>
+
+        <pre><code class="language-php">
+	echo $GLOBALS['app']->array_decode();
+</code></pre>
+
+
+
+
+
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+      <!-- fixit all of this -->
+
+      <section class="mb5 pt4" id="advanced">
+
+        
+
+        <div class="f2 fw7 mb4 bb pb2 bw2">Advanced</div>
+
+        <p class="lh-copy">
+          - how to work w/ nginx
+
+
+          link to patterns/components repo
+          - examples of how to do various kinds of things
+          - copy/paste code samples
+          - routing
+          - crud operations
+          - etc
+
+          - working w/ compose
+
+
+
+          pattern lib reqs
+          [- phmagick (imagemagick)
+          [- s3 upload (what's it called?)
+          [- smoke
+          [- dropzone
+          [- fancybox
+          [- mailgun
+
+
+          setting max file size (w/ htaccess / php)
+          upload_max_filesize = 20M
+          post_max_size = 20M
+        </p>
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <footer class="tr cf pv3">
+        <div class="f1"><a class="black no-underline" href="https://jyoungblood.github.io/">◉</a></div>
+        <div class="f7 lh-copy">
+          &copy; 2048 <a class="black" href="https://jyoungblood.github.io/">JY</a><br />
+          (CC) <a class="black" href="https://creativecommons.org/licenses/by-sa/3.0/us/">BY-SA 3.0</a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          if (document.querySelector('[href="#' + id + '"]') !== null) {
+            // console.log(entry.intersectionRatio);
+            if (entry.intersectionRatio > 0) {
+              // console.log('add current: ' + id);
+              document.querySelectorAll('.sidebar-nav a').forEach(el => el.classList.remove('current'));
+              document.querySelector('[href="#' + id + '"]').classList.add('current');
+              window.location.hash = '#' + id;
+            } else {
+              // console.log('remove current: ' + id);
+              // document.querySelector('[href="#' + id + '"]').classList.remove('current');
+            }
+          }
+        });
+      }, { rootMargin: "0px 0px -90% 0px" });
+
+      // Track all sections that have an `id` applied
+      document.querySelectorAll('[id]').forEach((section) => {
+        observer.observe(section);
+      });
+
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
