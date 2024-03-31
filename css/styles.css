@@ -1,0 +1,214 @@
+    html, body {
+      height: 100%;
+    }
+
+/* need this reset? */
+/* 
+* {
+  box-sizing: border-box;
+} 
+*/
+
+    #sidebar{
+      /* w-20-ns w-100 pa3 h-100-ns overflow-auto-ns fixed-ns top-0 left-0 */
+      width: 20%;
+      height: 100%;
+      padding: 1rem;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      /* SMALL */
+      /* width: 100%; */
+    }
+    
+
+    header{
+      /* flex mb2 pl1 */
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      border-bottom: 0.25rem solid #000;
+      padding-bottom: 0.5rem;
+    }
+    header .logo{
+      width: 3rem;
+      margin-left: 0.25rem;
+    }
+    header .title{
+      margin-left: 0.5rem;
+      line-height: 125%;
+    }
+
+    header .title a span{
+      display: block;
+      font-size: 90%;
+    }
+    header .title a strong{
+      font-size: 125%;
+    }
+
+    header a, nav a{
+      color: #000;
+      text-decoration: none;
+    }
+
+
+    nav ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul a{
+      font-weight: bold;
+      /* padding-left: 0.5rem; */
+    }
+
+
+    nav ul ul a{
+      font-weight: normal;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.25rem;
+      font-size: 0.9rem;
+    }
+    nav a:hover{
+      /* text-decoration: underline; */
+      background: rgba(0, 0, 0, 0.025);
+    }
+
+    nav a.current {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul ul a{
+      padding-left: 0.75rem;
+      font-size: 0.8rem;
+      /* font-size: 85%; */
+    }
+
+
+
+    main{
+      height: 100%;
+      /* margin-left: 20%; */
+      width: 80%;
+
+      /* SMALL */
+      /* width: 100%; */
+
+      padding: 1rem;
+
+
+      line-height: 1.5rem;
+    }
+    /* h-100 pa3 pl0-ns */
+
+
+    @media screen and (min-width: 48em) {
+      main {
+        margin-left: 20%;
+        padding: 1rem 1rem 1rem 0;
+
+      }
+    }
+
+    footer a{
+      color: black;
+      text-decoration: none;
+    }
+    footer a:hover{
+      text-decoration: underline;
+    }
+
+
+/* pico fixes */
+/* 
+    nav{
+      display: block;
+    }
+    article {
+      box-shadow: none;
+    } 
+*/
+
+
+/* // fixit bolt theme vars? */
+/* ex: border-radius: var(--border-radius); */
+
+/* 
+    --highlight-border-radius: 7px;
+    --border-radius: 11px;
+    --yellow-highlight: #fffab7;
+    --links: #0f6dff;
+    --background-body: #fff;
+    --background-main: #f1f1f1;
+    --background-inputs: #fcfcfc;
+    --text: #1c1d1e;
+    --border: #dddddd;
+    --focus-highlight: #b8b8b8;
+    --shadow-color: #545454;
+    --table-highlight: #f1f1f1;
+    --select-icon-url: url(data:image/svg+xml,%3Csvg width='292' height='292' viewBox='0 0 292 292' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath id='Path' fill='%23222222' stroke='none' d='M 287 69 C 283.606537 65.469971 278.895844 63.513214 274 63.600006 L 18.4 63.600006 C 13.4 63.600006 9.1 65.400009 5.5 69 C 1.984143 72.328568 -0.005267 76.958466 -0 81.800003 C -0 86.800003 1.8 91.100006 5.4 94.699997 L 133.399994 222.600006 C 137 226.200012 141.199997 228 146.199997 228 C 151.199997 228 155.399994 226.200012 159 222.600006 L 287 94.600006 C 290.5 91.100006 292.399994 86.800003 292.399994 81.800003 C 292.399994 76.800003 290.5 72.600006 286.899994 69 Z'/%3E%3C/svg%3E);
+ */
+
+/* fixit pre.codeblock */
+
+pre{
+  border-radius: 0;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 1rem;
+}
+pre > code{
+  /* max-width: 100%; */
+}
+/* pre:first-line {
+    line-height: 0;
+}
+pre:last-line {
+    line-height: 0;
+} */
+
+
+    /* padding: 10px;
+    border: 0;
+    display: block;
+    overflow-x: auto; */
+
+
+  article{
+    /* mb5 pt4 */
+    margin-bottom: 3rem;
+  }
+  article h2, article h3{
+    /* fixit scrolltop padding instead? */
+    padding-top: 1rem;
+  }
+  article h2{
+    margin-bottom: 1rem;
+    border-bottom: 0.25rem solid #000;
+    padding-bottom: 1rem;
+  }
+
+
+
+footer{
+  /* tr cf pv3 */
+  text-align: right;
+  padding: 1rem 0;
+}
+
+.columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+

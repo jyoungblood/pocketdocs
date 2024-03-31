@@ -9,382 +9,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <link rel="stylesheet" href="./css/tachyons.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.css" /> -->
 
-  <style>
 
-/* 
-    @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap');
 
-    body {
-      font-family: 'IBM Plex Sans', sans-serif;
-    }
+  <link rel="stylesheet" href="https://unpkg.com/boltcss/bolt.min.css">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-latte.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-mocha.css"> -->
 
-    .sys-blue {
-      color: blue;
-    }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
-    .bg-black-95 {
-      background: rgba(0, 0, 0, 0.95);
-    }
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/scripts.js"></script>
 
-    .black-95 {
-      color: rgba(0, 0, 0, 0.95);
-    }
-
-    .normal {}
-
-
-    .sidebar-nav a {
-      padding: 0.25rem;
-    }
-
-    .sidebar-nav a.current {
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-
-     */
-  </style>
-
-
-
-
-<!-- nicer lib, easy theme, nice docs, widely used -->
-
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" /> -->
-
-
-<!-- good -->
-<!-- *** -->
-<link rel="stylesheet" href="https://unpkg.com/boltcss/bolt.min.css">
-
-
-
-<!-- NO -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css"> -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alvaromontoro/almond.css@latest/dist/almond.min.css" /> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.7.1.min.css" /> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tiny.css@0/dist/tiny.css"> -->
-
-
-
-<!-- NO -->
-<!-- love this style better, tbh -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/normalize.css"> -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/concrete.css"> -->
-
-<!-- NO -->
-<!-- ehh this is ok -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/chota@latest"> -->
-
-
-
-<!-- best? -->
-<!-- NO! -->
-<!-- max-width 800? -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"> -->
-
-
-
-
-
-
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-macchiato.css"> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-frappe.css"> -->
-
-
-<!-- *** -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-latte.css">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-mocha.css"> -->
-
-<!-- variable version -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin.variables.css"> -->
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script> -->
-<script>hljs.highlightAll();</script>
-
-
-
-  <!-- custom version of prism: https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+handlebars+markup-templating+nginx+php+sql&plugins=normalize-whitespace+toolbar+copy-to-clipboard -->
-  <!-- <link rel="stylesheet" href="./css/prism.css" /> -->
-  <!-- <script src="./js/prism.js"></script> -->
-
-  <!-- USING THIS -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet"> -->
-
-  <!-- NOT THIS -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"> -->
-
-
-
-<!-- alt for code[class*="language-"], pre[class*="language-"] -->
-  <!-- /* font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */ -->
-  <!-- /* font-family: 'IBM Plex Mono', monospace; */ -->
-
-
-  <style>
-
-/* 
-    code[class*="language-"],
-    pre[class*="language-"] {
-      font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
-      line-height: 1.55;
-      margin-bottom: 1.5rem;
-    }
-
-
-
-
-    pre[class*="language-"] {
-      border-radius: 0;
-    }
-
-    code[class*="language-"],
-    pre[class*="language-"] {
-      font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
-      line-height: 1.55;
-      margin-bottom: 1.5rem;
-    }
-
-    .fira {
-      font-family: 'Fira Code', monospace;
-    }
-
-    .f7 {
-      font-size: .675rem;
-    }
-
-    .sidebar-nav a:hover {
-      text-decoration: underline;
-    }
-
-    a.hover-underline:hover,
-    a.hover-underline:hover span {
-      text-decoration: underline;
-    }
-
-    @media screen and (min-width: 48em) {
-      .content-frame {
-        margin-left: 20%;
-      }
-    }
-
-    .hover-o-50:hover {
-      opacity: 0.5;
-    }
-
- */
-
-
-  </style>
-
-
-
-
-
-
-<!-- custom styles -->
-
-  <style>
-    html, body {
-      height: 100%;
-    }
-
-/* need this reset? */
-/* 
-* {
-  box-sizing: border-box;
-} 
-*/
-
-    #sidebar{
-      /* w-20-ns w-100 pa3 h-100-ns overflow-auto-ns fixed-ns top-0 left-0 */
-      width: 20%;
-      height: 100%;
-      padding: 1rem;
-      overflow: auto;
-      position: fixed;
-      top: 0;
-      left: 0;
-
-      /* SMALL */
-      /* width: 100%; */
-    }
-    
-
-    header{
-      /* flex mb2 pl1 */
-      display: flex;
-      margin-bottom: 1rem;
-      border-bottom: 0.125rem solid #000;
-      padding-bottom: 0.5rem;
-    }
-    header div{
-      margin-left: 0.5rem;
-    }
-    header a{
-      font-weight: 700;
-    }
-
-    header a, nav a{
-      color: #000;
-      text-decoration: none;
-    }
-
-
-    nav ul{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul a{
-      font-weight: bold;
-    }
-
-
-    nav ul ul a{
-      font-weight: normal;
-    }
-
-    nav a {
-      display: block;
-      padding: 0.25rem;
-      /* font-size: 1rem; */
-    }
-    nav a:hover{
-      text-decoration: underline;
-    }
-
-    nav a.current {
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul ul a{
-      padding-left: 0.75rem;
-      font-size: 85%;
-    }
-
-
-
-    main{
-      height: 100%;
-      /* margin-left: 20%; */
-      width: 80%;
-
-      /* SMALL */
-      /* width: 100%; */
-
-      padding: 1rem;
-
-
-      line-height: 1.5rem;
-    }
-    /* h-100 pa3 pl0-ns */
-
-
-    @media screen and (min-width: 48em) {
-      main {
-        margin-left: 20%;
-      }
-    }
-
-    footer{
-      
-    }
-
-
-/* pico fixes */
-/* 
-    nav{
-      display: block;
-    }
-    article {
-      box-shadow: none;
-    } 
-*/
-
-
-/* // fixit bolt theme vars? */
-/* ex: border-radius: var(--border-radius); */
-
-/* 
-    --highlight-border-radius: 7px;
-    --border-radius: 11px;
-    --yellow-highlight: #fffab7;
-    --links: #0f6dff;
-    --background-body: #fff;
-    --background-main: #f1f1f1;
-    --background-inputs: #fcfcfc;
-    --text: #1c1d1e;
-    --border: #dddddd;
-    --focus-highlight: #b8b8b8;
-    --shadow-color: #545454;
-    --table-highlight: #f1f1f1;
-    --select-icon-url: url(data:image/svg+xml,%3Csvg width='292' height='292' viewBox='0 0 292 292' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath id='Path' fill='%23222222' stroke='none' d='M 287 69 C 283.606537 65.469971 278.895844 63.513214 274 63.600006 L 18.4 63.600006 C 13.4 63.600006 9.1 65.400009 5.5 69 C 1.984143 72.328568 -0.005267 76.958466 -0 81.800003 C -0 86.800003 1.8 91.100006 5.4 94.699997 L 133.399994 222.600006 C 137 226.200012 141.199997 228 146.199997 228 C 151.199997 228 155.399994 226.200012 159 222.600006 L 287 94.600006 C 290.5 91.100006 292.399994 86.800003 292.399994 81.800003 C 292.399994 76.800003 290.5 72.600006 286.899994 69 Z'/%3E%3C/svg%3E);
- */
-
-/* fixit pre.codeblock */
-
-pre{
-  border-radius: 0;
-  max-width: 100%;
-  margin-bottom: 1rem;
-  border: none;
-  padding: 1rem;
-}
-pre > code{
-  /* max-width: 100%; */
-}
-/* pre:first-line {
-    line-height: 0;
-}
-pre:last-line {
-    line-height: 0;
-} */
-
-
-    /* padding: 10px;
-    border: 0;
-    display: block;
-    overflow-x: auto; */
-
-
-  article{
-    /* mb5 pt4 */
-    margin-bottom: 3rem;
-  }
-  article h2, article h3{
-    padding-top: 1rem;
-  }
-footer{
-  /* tr cf pv3 */
-  text-align: right;
-  padding: 1rem 0;
-}
-
-.columns{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
-  grid-gap: 2rem;
-}
-
-
-
-
-
-  </style>
 
 
 </head>
@@ -401,26 +39,25 @@ footer{
   <section id="sidebar">
 
     <header>
-      <div style="width: 3rem;">
 
-        <!-- fixit -->
-      <a class="black" href="#">
-        <svg class="w-100" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-          stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 7h.01"></path>
-          <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
-          <path d="m20 7 2 .5-2 .5"></path>
-          <path d="M10 18v3"></path>
-          <path d="M14 17.75V21"></path>
-          <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
-        </svg>
-      </a>
-
+      <div class="logo">
+        <a href="#">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+            stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 7h.01"></path>
+            <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+            <path d="m20 7 2 .5-2 .5"></path>
+            <path d="M10 18v3"></path>
+            <path d="M14 17.75V21"></path>
+            <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
+          </svg>
+        </a>
       </div>
-      <div class="ml1 pl1 pt1 lh-title">
-        <a class="black no-underline hover-underline" href="#">
-          <span class="db f4 fw7">POCKET DOCS</span>
-          <span class="db f6">v0.0.1</span>
+
+      <div class="title">
+        <a href="#">
+          <strong>POCKET DOCS</strong>
+          <span>v0.0.1</span>
         </a>
       </div>
 
@@ -548,25 +185,44 @@ footer{
       <!-- {{!-- peachpuff --}} -->
       <!-- {{!-- ghostwhite --}} -->
 
-      <article id="home" style="height: 100%; position: relative; background: lightcyan;">
+      <article id="home" style="height: 100%; position: relative; background: lightcyan;
+      
+      	display: grid;
+	align-items: center;
+  justify-content: center;
+  text-align: center;
+      
+      ">
 
 
-<!-- fixit -->
-        <div class="dt h-100 center">
-          <div class="dtc h-100 v-mid tc">
-            <div class="mb5">
-              <div class="f1 fw7 mb2">POCKET DOCS</div>
-              <div class="f5">A small and simple documentation template.</div>
+<!-- fixit styles -->
+<div>
+
+            <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">POCKET DOCS</h1>
+            <div style="margin-bottom: 3rem;">A small and simple documentation template.</div>
+            
+            <div style="margin-bottom: 1.5rem;">
+            <a href="https://github.com/jyoungblood/pocketdocs/archive/refs/tags/0.0.1.zip" 
+              style="background: black;
+              color: white;
+              text-decoration: none;
+              font-size: 0.85rem;
+              border-radius: 0.25rem;
+              padding: 0.85rem 1rem;
+              box-sizing: border-box;
+              "
+            >&darr;&nbsp; pocketdocs-0.0.1.zip</a>
             </div>
-            <a href="https://github.com/jyoungblood/pocketdocs/archive/refs/tags/0.0.1.zip" class="bg-black white pv2 ph3 br2 no-underline hover-underline f6 ">&darr;&nbsp; pocketdocs-0.0.1.zip</a>
-            <div class="mt4 o-90">
-              <a target="_blank" href="https://github.com/jyoungblood/pocketdocs" class="dib f7 fw7 no-underline black hover-underline">
-                <svg style="height: 1.15rem;" class="dib v-mid" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                <span class="dib v-mid">SOURCE</span>
+
+            <div>
+              <a target="_blank" href="https://github.com/jyoungblood/pocketdocs"
+                style="color: black; text-decoration: none; display: inline-block; vertical-align: middle;"
+              >
+                <svg style="height: 1.15rem; display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span style="font-size: 0.7rem; display: inline-block; vertical-align: middle; font-weight: 700;">SOURCE</span>
               </a>
             </div>
-          </div>
-        </div>
+</div>
 
       </article>
 
@@ -579,87 +235,49 @@ footer{
       <article id="intro">
 
 
+        <div class="columns">
+          <div>
 
-<!-- fixit -->
-        <div class="center mw7 mv6 tl lh-copy f4">
+            <div style="font-size: 1.25rem; padding: 0 1rem;">
+              <p>Pocket Docs is HTML template for a single-page docs site.</p>
+              <p>It's designed to be simple and easy to use.</p>
+              <p>It's <b>free</b> and <b>open source</b>.</p>
+            </div>
 
-          <div class="mb5">
-            <p>Pocket Docs is HTML template for a single-page docs site.</p>
-            <p>It's designed to be simple and easy to use.</p>
-            <p>It's <b>free</b> and <b>open source</b>.</p>
           </div>
 
+          <div>
+
+            <h3>Key Features:</h3>
+
+            <ul style="padding-left: 1rem; padding-right: 3rem;">
+              
+              <li>semantic html structure, simple straightforward architecture ... almost easy as writing markdown (html is semantic, doesn’t have extra classes</li>
+
+              <li>highlight.js for syntax highlighting</li>
+
+              <li>Nav that keeps up with scrolling</li>
+
+              <li>Single page like KNEX docs</li>
+
+              <li>Themeable (at some point...easy to edit for now)</li>
+
+              <li>bolt.css simple basic reset, also :root css vars</li>
+
+              <li>It's just a single file!</li>
+
+              <li>Looks nice (and normal) without a lot of work ... EASY TO USE (& customize) / work with ... simple static thing you can dev locally, push to gh pages * for making ~beautiful~ single-page docs sites</li>
+
+            </ul>
 
 
-          <div class="f3 mb3 b">Key Features:</div>
-
-          <div class="flex f5">
-            <div class="pr3 w-50">
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>semantic html structure, simple straightforward architecture ... almost easy as writing markdown (html is semantic, doesn’t have extra classes</span>
-              </div>
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>highlight.js for syntax highlighting</span>
-              </div>
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>Nav that keeps up with scrolling</span>
-              </div>
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>Single page like KNEX docs</span>
-              </div>
-
-            </div>
-            <div class="pl3 w-50">
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>Themeable (at some point...easy to edit for now)</span>
-              </div>
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>bolt.css simple basic reset, also :root css vars</span>
-              </div>
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>It's just a single file!</span>
-              </div>
-
-              <div class="flex items-start mb3">
-                <span class="fw7 mr1">•</span> <span>Looks nice (and normal) without a lot of work ... EASY TO USE (& customize) / work with ... simple static thing you can dev locally, push to gh pages
-                * for making ~beautiful~ single-page docs sites</span>
-              </div>
-
-            </div>
           </div>
-
         </div>
 
 
 
 
 
-
-
-
-
-      </article>
-
-
-
-<!-- fixit -->
-
-      <article id="ethos" class="black-90 bg-black-05 pa5 mb6">
-
-
-        <div class="lh-copy mb4 f3 fw7">Second section with supplemental information or other "before you get started"</div>
-
-
-        Could be any introductory information or links to any resources (theming, choosing an icon, etc)
-
-
       </article>
 
 
@@ -674,10 +292,12 @@ footer{
 
 
 
-      <article id="installation">
 
 
-        <h2>Installation / Setup</h2>
+      <article>
+
+
+        <h2 id="installation">Installation / Setup</h2>
 
 
         
@@ -765,14 +385,13 @@ footer{
 
 
 
-<!-- fixit stopped here -->
 
 
-      <article id="routing">
+      <article>
 
         
 
-        <h2>URL Routing</h2>
+        <h2 id="routing">URL Routing</h2>
         
         <p>something something define what happens a user visits a given url on your
           site. by default all of the routes are in ./controllers/_routes.php, but as your site grows, you might find it
@@ -930,11 +549,11 @@ $app->get('/directory/search/?', function(){
 
 
 
-      <article id="rendering">
+      <article>
 
         
 
-        <h2>Rendering Content</h2>
+        <h2 id="rendering">Rendering Content</h2>
 
         <p>once you have a URL route set up, it's a good idea to define what
           happens there. the sky is almost the limit for what you can do at that point...it just has to be php. here are
@@ -1049,11 +668,11 @@ $app->get('/whatever', function(){
 
 
 
-      <article id="templates">
+      <article>
 
         
 
-        <h2>Templates</h2>
+        <h2 id="templates">Templates</h2>
 
         <p>something something templates go in ./pages and you can call them
           whatever you want. you can organize this however you want, too! link to handlebars docs for more info.</p>
@@ -1442,11 +1061,11 @@ $GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
 
 
 
-      <article id="handlebars-helpers">
+      <article>
 
         
 
-        <h2>Handlebars Helpers</h2>
+        <h2 id="handlebars-helpers">Handlebars Helpers</h2>
 
         <p>You can use handlebars helpers to transform any of your handlebars variables.
           STEREO includes a handful of common php functions as helpers plus a few special ones. you can write your own,
@@ -1679,11 +1298,11 @@ $engine->addHelper('lowercase_slashes', function($template, $context, $args, $so
 
 
 
-      <article id="requests">
+      <article>
 
         
 
-        <h2>HTTP Requests</h2>
+        <h2 id="requests">HTTP Requests</h2>
         
         <p>something something it's trivially easy to work with other systems if you use
           an api! look how easy it is to consume 3rd-party services
@@ -1822,11 +1441,11 @@ print_r($data);
 
 
 
-      <article id="cookies">
+      <article>
 
         
 
-        <h2>Cookies</h2>
+        <h2 id="cookies">Cookies</h2>
 
 
         <h3 id="cookie-set">cookie_set ($key, $value, $expiration_date)</h3>
@@ -1888,11 +1507,11 @@ $GLOBALS['app']->cookie_delete('user_name');
 
 
 
-      <article id="data">
+      <article>
 
         
 
-        <h2>Data</h2>
+        <h2 id="data">Data</h2>
 
         <p>(something mysql crud functionality, requires pdo (php 5.3+), global
           functions, not part of the $app class, so use it however it suits you)</p>
@@ -1991,11 +1610,11 @@ db_delete("celestial_bodies", "name='venice'");
 
 
 
-      <article id="misc">
+      <article>
 
         
 
-        <h2>Misc Helper Functions</h2>
+        <h2 id="misc">Misc Helper Functions</h2>
         
 
 
@@ -2045,7 +1664,7 @@ $GLOBALS['app']->email_send(array(
 echo $GLOBALS['app']->client_ip();
         </code></pre>
         <p>
-          fixit disclaimer about ip addresses and accuracy (we use a couple of redundant methods, but you can't really
+           disclaimer about ip addresses and accuracy (we use a couple of redundant methods, but you can't really
           trust them in general because of the nature of how ip addresses work...easily spoofable, etc)
         </p>
 
@@ -2179,13 +1798,12 @@ echo $GLOBALS['app']->array_decode();
 
 
 
-      <!-- fixit all of this -->
 
-      <article id="advanced">
+      <article>
 
         
 
-        <h2>Advanced</h2>
+        <h2 id="advanced">Advanced</h2>
 
         <p>
           - how to work w/ nginx
@@ -2250,14 +1868,9 @@ echo $GLOBALS['app']->array_decode();
 
 
 
-      <!-- fixit -->
 
       <footer>
-        <div class="f1"><a class="black no-underline" href="https://jyoungblood.github.io/">◉</a></div>
-        <div class="f7 lh-copy">
-          &copy; 2048 <a class="black" href="https://jyoungblood.github.io/">JY</a><br />
-          (CC) <a class="black" href="https://creativecommons.org/licenses/by-sa/3.0/us/">BY-SA 3.0</a>
-        </div>
+        <a href="https://jyoungblood.github.io/">&copy; 2048 JY ♥</a>
       </footer>
 
 
@@ -2276,43 +1889,6 @@ echo $GLOBALS['app']->array_decode();
 
 
 
-
-
-  <script>
-
-    window.addEventListener('DOMContentLoaded', () => {
-
-
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          const id = entry.target.getAttribute('id');
-          if (document.querySelector('[href="#' + id + '"]') !== null) {
-            // console.log(entry.intersectionRatio);
-            if (entry.intersectionRatio > 0) {
-
-// fixit weird scroll issues with this?
-
-              // console.log('add current: ' + id);
-              document.querySelectorAll('nav a').forEach(el => el.classList.remove('current'));
-              document.querySelector('[href="#' + id + '"]').classList.add('current');
-              window.location.hash = '#' + id;
-            } else {
-              // console.log('remove current: ' + id);
-              // document.querySelector('[href="#' + id + '"]').classList.remove('current');
-            }
-          }
-        });
-      }, { rootMargin: "0px 0px -90% 0px" });
-
-      // Track all sections that have an `id` applied
-      document.querySelectorAll('[id]').forEach((section) => {
-        observer.observe(section);
-      });
-
-    });
-
-  </script>
 
 
 

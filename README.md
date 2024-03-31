@@ -11,6 +11,7 @@ check out the demo: https://jyoungblood.github.io/pocketdocs
 HTML template for a single-page docs site. Incorporates bolt.css and code blocks w/ highlight.js
   just a single html file
 
+  it's just html, so the sky's the limit on what you COULD do, this just gives you a nice starting point to have something nice without any effort (just as easy as writing a readme)
 
 simple static thing you can dev locally, push to gh pages
 * for making ~beautiful~ single-page docs sites
