@@ -9,13 +9,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://unpkg.com/boltcss/bolt.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/boltcss/bolt.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-latte.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-mocha.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-latte.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs@0.1.4/css/catppuccin-mocha.css">
 
+  <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
+  <script>
+    hljs.highlightAll();
+    hljs.addPlugin(new CopyButtonPlugin());
+  </script>
 
   <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/scripts.js"></script>
@@ -167,51 +173,25 @@
 
 
 
-      <!-- {{!-- css colors: http://davidbau.com/colors/ --}} -->
+      <article id="home">
 
-      <!-- {{!-- lightcyan --}} -->
-      <!-- {{!-- honeydew --}} -->
-      <!-- {{!-- peachpuff --}} -->
-      <!-- {{!-- ghostwhite --}} -->
+        <div>
 
-      <article id="home" style="height: 100%; position: relative; background: peachpuff;
-      
-      	display: grid;
-	align-items: center;
-  justify-content: center;
-  text-align: center;
-      
-      ">
+          <h1>POCKET DOCS</h1>
+          <div class="subtitle">A small and simple documentation template.</div>
+          
+          <div class="download-button">
+            <a href="https://github.com/jyoungblood/pocketdocs/archive/refs/tags/0.0.1.zip">&darr;&nbsp; pocketdocs-0.0.1.zip</a>
+          </div>
 
+          <div class="source-link">
+            <a target="_blank" href="https://github.com/jyoungblood/pocketdocs">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>SOURCE</span>
+            </a>
+          </div>
 
-<!-- fixit styles -->
-<div>
-
-            <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">POCKET DOCS</h1>
-            <div style="margin-bottom: 3rem;">A small and simple documentation template.</div>
-            
-            <div style="margin-bottom: 1.5rem;">
-            <a href="https://github.com/jyoungblood/pocketdocs/archive/refs/tags/0.0.1.zip" 
-              style="background: black;
-              color: white;
-              text-decoration: none;
-              font-size: 0.85rem;
-              border-radius: 0.25rem;
-              padding: 0.85rem 1rem;
-              box-sizing: border-box;
-              "
-            >&darr;&nbsp; pocketdocs-0.0.1.zip</a>
-            </div>
-
-            <div>
-              <a target="_blank" href="https://github.com/jyoungblood/pocketdocs"
-                style="color: black; text-decoration: none; display: inline-block; vertical-align: middle;"
-              >
-                <svg style="height: 1.15rem; display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                <span style="font-size: 0.7rem; display: inline-block; vertical-align: middle; font-weight: 700;">SOURCE</span>
-              </a>
-            </div>
-</div>
+        </div>
 
       </article>
 
@@ -267,9 +247,6 @@
 
 
 
-
-
-
         <div class="columns">
 
           <div>
@@ -312,8 +289,9 @@
         </div>
 
 
-
-        <small>* NOTE: consectetur adipiscing elit, sed do eiusmod tempor incididunt.</small>
+        <p>
+          <small>* NOTE: consectetur adipiscing elit, sed do eiusmod tempor incididunt.</small>
+        </p>
 
 
 
@@ -378,67 +356,49 @@
           make an actual rest
           api with http verbs) (all current http verbs are supported, so you can get as specific as you want)</p>
 
-        <pre><code class="language-php">
-$app->get('/whatever/url/you/define', function(){
+        <pre><code class="language-php">$app->get('/whatever/url/you/define', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->post('/whatever/url', function(){
+        <pre><code class="language-php">$app->post('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->post('/whatever/url', function(){
+        <pre><code class="language-php">$app->post('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->put('/whatever/url', function(){
+        <pre><code class="language-php">$app->put('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->delete('/whatever/url', function(){
+        <pre><code class="language-php">$app->delete('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->patch('/whatever/url', function(){
+        <pre><code class="language-php">$app->patch('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->copy('/whatever/url', function(){
+        <pre><code class="language-php">$app->copy('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->head('/whatever/url', function(){
+        <pre><code class="language-php">$app->head('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->options('/whatever/url', function(){
+        <pre><code class="language-php">$app->options('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
 
@@ -449,18 +409,14 @@ $app->options('/whatever/url', function(){
         </p>
 
 
-        <pre><code class="language-php">
-$app->all('/whatever/url', function(){
+        <pre><code class="language-php">$app->all('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
-        <pre><code class="language-php">
-$app->any('/whatever/url', function(){
+        <pre><code class="language-php">$app->any('/whatever/url', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
 
@@ -483,33 +439,27 @@ $app->any('/whatever/url', function(){
         
         <p>With or without the trailing slash:</p>
 
-        <pre><code class="language-php">
-$app->get('/about/?', function(){
+        <pre><code class="language-php">$app->get('/about/?', function(){
   // your PHP code here
-});
-        </code></pre>
+});</code></pre>
 
 
         
         <p>Using a url parameter as variable:</p>
 
-        <pre><code class="language-php">
-$app->get('/register/activate/[*:hash]', function($hash){ 
+        <pre><code class="language-php">$app->get('/register/activate/[*:hash]', function($hash){ 
   // url parameter is available to your PHP code as $hash
-});
-        </code></pre>
+});</code></pre>
 
         
         <p>And of course you can access _GET vars like normal PHP docs:</p>
 
-        <pre><code class="language-php">
-$app->get('/directory/search/?', function(){ 
+        <pre><code class="language-php">$app->get('/directory/search/?', function(){ 
   // ex url: http://partyphysics.com/directory/search/?fish=betta&dish=espinacas&planet=keppler-452b
   echo $_GET['fish'];  // betta
   echo $_GET['dish'];  // espinacas
   echo $_GET['planet'];  // keppler-452b
-});		
-        </code></pre>
+});		</code></pre>
 
 
       </article>
@@ -540,8 +490,7 @@ $app->get('/directory/search/?', function(){
 
 
 
-        <pre><code class="language-php">
-$app->get('/handlebars-stereo', function(){
+        <pre><code class="language-php">$app->get('/handlebars-stereo', function(){
   $GLOBALS['app']->render_template(array(
     'template' => 'planets',
     'title' => 'Cool Planets',
@@ -553,8 +502,7 @@ $app->get('/handlebars-stereo', function(){
       )
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
 
         <h3 id="render-json">render_json ($options)</h3>
@@ -562,16 +510,14 @@ $app->get('/handlebars-stereo', function(){
           API responses)</p>
 
 
-        <pre><code class="language-php">
-$app->post('/json-response', function(){
+        <pre><code class="language-php">$app->post('/json-response', function(){
   $GLOBALS['app']->render_json(array(
     'righteous_content' => 'for sure',
     'planets' => array(
       'Mercury', 'Venus', 'Earth', 'Nibiru'
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
 
         <h3 id="render">render ($template_name, $data)</h3>
@@ -581,16 +527,14 @@ $app->post('/json-response', function(){
           class)</p>
 
 
-        <pre><code class="language-php">
-$app->get('/handlebars-normal', function(){
+        <pre><code class="language-php">$app->get('/handlebars-normal', function(){
   echo $GLOBALS['engine']->render('handlebars-example', array(
     'righteous_content' => 'for sure',
     'planets' => array(
       'Mercury', 'Venus', 'Earth', 'Nibiru'
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
 
 
@@ -600,11 +544,9 @@ $app->get('/handlebars-normal', function(){
         <p>want to show just a document? do it like this</p>
 
 
-        <pre><code class="language-php">
-$app->get('/normal-page', function(){
+        <pre><code class="language-php">$app->get('/normal-page', function(){
   require __DIR__ . '/pages/whatever.html';
-});
-        </code></pre>
+});</code></pre>
 
 
 
@@ -616,11 +558,9 @@ $app->get('/normal-page', function(){
           remember</p>
 
 
-        <pre><code class="language-php">
-$app->get('/whatever', function(){
+        <pre><code class="language-php">$app->get('/whatever', function(){
   header("Location: http://partyphysics.com/");
-});
-        </code></pre>
+});</code></pre>
 
 
         <!-- 		future: render_error -->
@@ -665,8 +605,7 @@ $app->get('/whatever', function(){
             <p>php</p>
 
 
-            <pre><code class="language-php">
-$app->get('/variable-example', function(){
+            <pre><code class="language-php">$app->get('/variable-example', function(){
   $GLOBALS['app']->render_template(array(
     'template' => 'demo',
     'data' => array(
@@ -675,8 +614,7 @@ $app->get('/variable-example', function(){
       'planet' => 'Nibiru'
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
           </div>
 
@@ -688,13 +626,10 @@ $app->get('/variable-example', function(){
               tags, so if you
               want to have them rendered, do this)</p>
 
-            <pre><code class="language-html">
-
-&lt;h2&gt;Simple Variables Example&lt;/h2&gt;
+            <pre><code class="language-html">&lt;h2&gt;Simple Variables Example&lt;/h2&gt;
 &lt;h3&gt;Cool Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
 &lt;h3&gt;Cool Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
-&lt;h3&gt;Cool Planet: &#123;&#123;planet&#125;&#125;&lt;/h3&gt;
-        </code></pre>
+&lt;h3&gt;Cool Planet: &#123;&#123;planet&#125;&#125;&lt;/h3&gt;</code></pre>
 
           </div>
 
@@ -716,8 +651,7 @@ $app->get('/variable-example', function(){
            
             <p>php (simple & complex example from demo)</p>
 
-            <pre><code class="language-php">
-$app->get('/array-example', function(){
+            <pre><code class="language-php">$app->get('/array-example', function(){
   $GLOBALS['app']->render_template(array(
     'template' => 'demo',
     'data' => array(
@@ -731,8 +665,7 @@ $app->get('/array-example', function(){
       )
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
           </div>
 
@@ -743,13 +676,11 @@ $app->get('/array-example', function(){
             <p>hbs (simple & complex example from demo)</p>
 
 
-            <pre><code class="language-html">
-&lt;ul&gt;
+            <pre><code class="language-html">&lt;ul&gt;
   &#123;&#123;#each snacks&#125;&#125;
   &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
   &#123;&#123;/each&#125;&#125;
-&lt;/ul&gt;
-        </code></pre>
+&lt;/ul&gt;</code></pre>
 
           </div>
 
@@ -772,8 +703,7 @@ $app->get('/array-example', function(){
 
             <p>php</p>
 
-            <pre><code class="language-php">
-$app->get('/logic-example', function(){
+            <pre><code class="language-php">$app->get('/logic-example', function(){
   $GLOBALS['app']->render_template(array(
     'template' => 'demo',
     'data' => array(
@@ -781,8 +711,7 @@ $app->get('/logic-example', function(){
       'dish' => 'paella',
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
           </div>
 
@@ -793,8 +722,7 @@ $app->get('/logic-example', function(){
               helpers)</p>
 
 
-            <pre><code class="language-html">
-&#123;&#123;#if fish&#125;&#125;
+            <pre><code class="language-html">&#123;&#123;#if fish&#125;&#125;
   Salmon is available
 &#123;&#123;else&#125;&#125; // this won't show:
   No salmon for you.
@@ -807,8 +735,7 @@ $app->get('/logic-example', function(){
   &#123;&#123;#each snacks&#125;&#125;
   - &#123;&#123;this&#125;&#125; &lt;br /&gt;
   &#123;&#123;/each&#125;&#125;
-&#123;&#123;/unless&#125;&#125;
-        </code></pre>
+&#123;&#123;/unless&#125;&#125;</code></pre>
 
           </div>
 
@@ -829,8 +756,7 @@ $app->get('/logic-example', function(){
            
             <p>normal php whatever example</p>
 
-            <pre><code class="language-php">
-$app->get('/partials-example', function(){
+            <pre><code class="language-php">$app->get('/partials-example', function(){
   $GLOBALS['app']->render_template(array(
     'template' => 'demo',
     'data' => array(
@@ -839,33 +765,28 @@ $app->get('/partials-example', function(){
       'planet' => 'Nibiru'
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
            
             <p>hbs</p>
 
 
-            <pre><code class="language-html">
-&lt;h2&gt;Demo page (rendered with partial from separate template)&lt;/h2&gt;
+            <pre><code class="language-html">&lt;h2&gt;Demo page (rendered with partial from separate template)&lt;/h2&gt;
 
 &lt;h3&gt;Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
 &lt;h3&gt;Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
 
-&#123;&#123;&gt; planets-partial&#125;&#125;
-        </code></pre>
+&#123;&#123;&gt; planets-partial&#125;&#125;</code></pre>
 
            
             <p>hbs (partial code) (see how it has access to the same data?)</p>
 
 
-            <pre><code class="language-html">
-&lt;ul&gt;
+            <pre><code class="language-html">&lt;ul&gt;
   &#123;&#123;#each planets&#125;&#125;
   &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
   &#123;&#123;/each&#125;&#125;
-&lt;/ul&gt;
-        </code></pre>
+&lt;/ul&gt;</code></pre>
 
 
 
@@ -889,8 +810,7 @@ $app->get('/partials-example', function(){
 
         <p>php example</p>
 
-        <pre><code class="language-php">
-$app->get('/layouts-example', function(){
+        <pre><code class="language-php">$app->get('/layouts-example', function(){
   $GLOBALS['app']->render_template(array(
     'template' => 'demo',
     'title' => 'Site Title Whatever',
@@ -903,15 +823,13 @@ $app->get('/layouts-example', function(){
       )
     )
   ));
-});
-        </code></pre>
+});</code></pre>
 
 
         <p>hbs (wrapper)</p>
 
 
-        <pre><code class="language-html">
-&lt;!DOCTYPE html&gt;
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;
@@ -933,14 +851,12 @@ $app->get('/layouts-example', function(){
 &lt;script src="/js/app.js"&gt;&lt;/script&gt;
 
 &lt;/body&gt;
-&lt;/html&gt;
-        </code></pre>
+&lt;/html&gt;</code></pre>
 
 
         <p>hbs</p>
 
-        <pre><code class="language-html">
-&lt;h2&gt;Demo page (rendered with global wrapper)&lt;/h2&gt;
+        <pre><code class="language-html">&lt;h2&gt;Demo page (rendered with global wrapper)&lt;/h2&gt;
 
 &lt;h3&gt;Fish: &#123;&#123;fish&#125;&#125;&lt;/h3&gt;
 &lt;h3&gt;Dish: &#123;&#123;dish&#125;&#125;&lt;/h3&gt;
@@ -949,8 +865,7 @@ $app->get('/layouts-example', function(){
   &#123;&#123;#each planets&#125;&#125;
   &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
   &#123;&#123;/each&#125;&#125;
-&lt;/ul&gt;
-        </code></pre>
+&lt;/ul&gt;</code></pre>
 
 
 
@@ -965,25 +880,22 @@ $app->get('/layouts-example', function(){
           whatever</p>
 
         <div class="columns">
-          <div>
+          <div class="w-50">
 
            
             <p>php example</p>
 
-            <pre><code class="language-php">
-$GLOBALS['locals']['eat_this'] = "breakfast";
-        </code></pre>
+            <pre><code class="language-php">$GLOBALS['locals']['eat_this'] = "breakfast";
+$GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');</code></pre>
           </div>
 
 
-          <div>
+          <div class="w-50">
 
            
             <p>hbs</p>
 
-            <pre><code class="language-html">
-Let's have &#123;&#123;locals.eat_this&#125;&#125; for dinner.
-        </code></pre>
+            <pre><code class="language-html">Let's have &#123;&#123;locals.eat_this&#125;&#125; for dinner.</code></pre>
 
           </div>
 
@@ -992,30 +904,26 @@ Let's have &#123;&#123;locals.eat_this&#125;&#125; for dinner.
 
 
         <div class="columns">
-          <div>
+          <div class="w-50">
 
            
             <p>php example</p>
 
-            <pre><code class="language-php">
-$GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
-        </code></pre>
+            <pre><code class="language-php">$GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');</code></pre>
 
           </div>
 
 
-          <div>
+          <div class="w-50">
 
            
             <p>hbs</p>
 
-            <pre><code class="language-html">
-&lt;ul&gt;
+            <pre><code class="language-html">&lt;ul&gt;
   &#123;&#123;#each locals.colors&#125;&#125;
   &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;
   &#123;&#123;/each&#125;&#125;
-&lt;/ul&gt;
-        </code></pre>
+&lt;/ul&gt;</code></pre>
 
           </div>
 
@@ -1053,10 +961,8 @@ $GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
 
         <p>transform string to lowercase (link to php docs)</p>
 
-        <pre><code class="language-html">
-&#123;&#123;lowercase hbar_variable&#125;&#125;
-// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don't fear the reaper"
-        </code></pre>
+        <pre><code class="language-html">&#123;&#123;lowercase hbar_variable&#125;&#125;
+// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don't fear the reaper"</code></pre>
 
 
 
@@ -1065,10 +971,8 @@ $GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
 
         <p>escape quotes (link to php docs)</p>
 
-        <pre><code class="language-html">
-&#123;&#123;addshlashes hbar_variable&#125;&#125;
-// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "Don\'t Fear The Reaper"
-        </code></pre>
+        <pre><code class="language-html">&#123;&#123;addshlashes hbar_variable&#125;&#125;
+// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "Don\'t Fear The Reaper"</code></pre>
 
 
 
@@ -1079,13 +983,11 @@ $GLOBALS['locals']['colors'] = array('red', 'salmon', 'lilac', 'azul');
           nl2br
           // transform line breaks to "br /" ()link to php docs</p>
 
-        <pre><code class="language-html">
-&#123;&#123;&#123;nl2br hbar_variable&#125;&#125;&#125;
+        <pre><code class="language-html">&#123;&#123;&#123;nl2br hbar_variable&#125;&#125;&#125;
 /* 
 &nbsp;&nbsp; "Don't Fear
 The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
-*/
-        </code></pre>
+*/</code></pre>
 
 
 
@@ -1095,11 +997,9 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
         <p>to_fixed - return given number calculated to given number of decimal places (defaults to 2)
         </p>
 
-        <pre><code class="language-html">
-&#123;&#123;to_fixed hbar_variable&#125;&#125; &nbsp;&nbsp; // 3.14
+        <pre><code class="language-html">&#123;&#123;to_fixed hbar_variable&#125;&#125; &nbsp;&nbsp; // 3.14
 &#123;&#123;to_fixed hbar_variable 4&#125;&#125; &nbsp;// 3.1415
-&#123;&#123;to_fixed hbar_variable 0&#125;&#125; &nbsp;// 3
-        </code></pre>
+&#123;&#123;to_fixed hbar_variable 0&#125;&#125; &nbsp;// 3</code></pre>
 
 
 
@@ -1114,10 +1014,8 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
           date/time
         </p>
 
-        <pre><code class="language-html">
-&#123;&#123;date hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "1459036800" &nbsp; ---> &nbsp; "3/27/2015"
-&#123;&#123;date "now" "m/d/Y"&#125;&#125; &nbsp;// "{{date "now" "m/d/Y"}}"
-        </code></pre>
+        <pre><code class="language-html">&#123;&#123;date hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "1459036800" &nbsp; ---> &nbsp; "3/27/2015"
+&#123;&#123;date "now" "m/d/Y"&#125;&#125; &nbsp;// "{{date "now" "m/d/Y"}}"</code></pre>
 
 
 
@@ -1130,9 +1028,7 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
           first)
         </p>
 
-        <pre><code class="language-html">
-&#123;&#123;date_transform hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "Sun Aug 14 2016 00:00:00 +0000" &nbsp; ---> &nbsp; "8/14/2016"
-        </code></pre>
+        <pre><code class="language-html">&#123;&#123;date_transform hbar_variable "m/d/Y"&#125;&#125; &nbsp;// "Sun Aug 14 2016 00:00:00 +0000" &nbsp; ---> &nbsp; "8/14/2016"</code></pre>
 
 
 
@@ -1151,8 +1047,7 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
         <p>in_array -- return true(/false) if this item is(/is not) in the array -- can be a csv string,
           too</p>
 
-        <pre><code class="language-html">
-/*
+        <pre><code class="language-html">/*
   colors_array = ['red', 'salmon', 'lilac', 'azul']
                     -- or --
   colors_array = "red, salmon, lilac, azul"
@@ -1162,8 +1057,7 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
   it's in the array!
 &#123;&#123;else&#125;&#125; 
   it's not in :(
-&#123;&#123;/in_array&#125;&#125;		
-        </code></pre>
+&#123;&#123;/in_array&#125;&#125;		</code></pre>
 
 
 
@@ -1174,13 +1068,11 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
         <p>if_either - return true if the first thing equals either the second or third thing (they
           could also be hbar_variables)</p>
 
-        <pre><code class="language-html">
-&#123;&#123;#if_either hbar_variable "salmon" "azul"&#125;&#125;
+        <pre><code class="language-html">&#123;&#123;#if_either hbar_variable "salmon" "azul"&#125;&#125;
   it's true :)
 &#123;&#123;else&#125;&#125;
   it's false :(
-&#123;&#123;/if_either&#125;&#125;
-        </code></pre>
+&#123;&#123;/if_either&#125;&#125;</code></pre>
 
 
 
@@ -1194,13 +1086,11 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
           acceptable operators: ==, ===, not, !=, <,>, <=,>=, in, typeof</p>
 
 
-        <pre><code class="language-html">
-&#123;&#123;#is hbar_variable "==" "paella"&#125;&#125;
+        <pre><code class="language-html">&#123;&#123;#is hbar_variable "==" "paella"&#125;&#125;
   yes :)
 &#123;&#123;else&#125;&#125;
   no :(
-&#123;&#123;/is&#125;&#125;
-        </code></pre>
+&#123;&#123;/is&#125;&#125;</code></pre>
 
         
         <p>// will also show if the first thing is contained within the second thing (even it's CSV)
@@ -1208,24 +1098,20 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
           string, csv list, or an array)
           // 2nd param can beither array or csv</p>
 
-        <pre><code class="language-html">
-&#123;&#123;#is hbar_variable_1 "in" hbar_variable_2&#125;&#125;
+        <pre><code class="language-html">&#123;&#123;#is hbar_variable_1 "in" hbar_variable_2&#125;&#125;
   yes :)
 &#123;&#123;else&#125;&#125;
   no :(
-&#123;&#123;/is&#125;&#125;
-        </code></pre>
+&#123;&#123;/is&#125;&#125;</code></pre>
         
         <p>// you can also compare variables by types (array, string, integer, etc) (uses <a
             href="http://php.net/manual/es/function.gettype.php">php gettype</a></p>
 
-        <pre><code class="language-html">
-&#123;&#123;#is hbar_variable_1 "typeof" hbar_variable_2&#125;&#125;
+        <pre><code class="language-html">&#123;&#123;#is hbar_variable_1 "typeof" hbar_variable_2&#125;&#125;
   yes :)
 &#123;&#123;else&#125;&#125;
   no :(
-&#123;&#123;/is&#125;&#125;
-        </code></pre>
+&#123;&#123;/is&#125;&#125;</code></pre>
 
 
 
@@ -1243,20 +1129,16 @@ The Reaper" &nbsp; ---> &nbsp; "Don't Fear &lt;br /&gt; The Reaper"
         <p>php example</p>
 
 
-        <pre><code class="language-php">
-$engine->addHelper('lowercase_slashes', function($template, $context, $args, $source) {
+        <pre><code class="language-php">$engine->addHelper('lowercase_slashes', function($template, $context, $args, $source) {
   $parsed_args = $template->parseArguments($args);
   return lowercase(addslashes($context->get($parsed_args[0])));
-});
-        </code></pre>
+});</code></pre>
 
        
         <p>corresponding hbs (wrapper)</p>
 
-        <pre><code class="language-html">
-&#123;&#123;lowercase_slashes hbar_variable&#125;&#125;
-// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don\'t fear the reaper"
-        </code></pre>
+        <pre><code class="language-html">&#123;&#123;lowercase_slashes hbar_variable&#125;&#125;
+// "Don't Fear The Reaper" &nbsp; ---> &nbsp; "don\'t fear the reaper"</code></pre>
 
 
 
@@ -1290,12 +1172,10 @@ $engine->addHelper('lowercase_slashes', function($template, $context, $args, $so
         <p>Make an http request to a given url (using curl), send data, return the raw response.</p>
 
 
-        <pre><code class="language-php">
-$data = $GLOBALS['app']->http_request('https://external-api.com/v3/example-response', array(
+        <pre><code class="language-php">$data = $GLOBALS['app']->http_request('https://external-api.com/v3/example-response', array(
   'user_id' => 581146,
   'api_key' => '696719xvckvzxspigh24y1e-b'
-));
-        </code></pre>
+));</code></pre>
 
 
         if you need to make a json/http request a GET request instead of post, do this:
@@ -1317,8 +1197,7 @@ $data = $GLOBALS['app']->http_request('https://external-api.com/v3/example-respo
         </p>
 
 
-        <pre><code class="language-php">
-$data = $GLOBALS['app']->json_request('https://external-api.com/v3/example-response', array(
+        <pre><code class="language-php">$data = $GLOBALS['app']->json_request('https://external-api.com/v3/example-response', array(
   'user_id' => 581146,
   'api_key' => '696719xvckvzxspigh24y1e-b'
 ));
@@ -1339,8 +1218,7 @@ print_r($data);
     'last_name' => 'Mercury',
     'favorite_fish' => 'Salmon'
   );
-*/
-        </code></pre>
+*/</code></pre>
 
 
         <h3 id="api-request">api_request ($url, $data)</h3>
@@ -1355,8 +1233,7 @@ print_r($data);
           if your api requires a key or whatever...see stereo-core.php, the function called "api_request" obv) (append
           _debug to just make an http request and see the raw result)</p>
 
-        <pre><code class="language-php">
-$data = $GLOBALS['app']->api_request('/admin/events/screen', array(
+        <pre><code class="language-php">$data = $GLOBALS['app']->api_request('/admin/events/screen', array(
   'parameter_1' => 'cool stuff',
   'parameter_2' => 'cooler stuff'
 ));
@@ -1388,8 +1265,7 @@ print_r($data);
     'last_name' => 'Mercury',
     'favorite_fish' => 'Salmon'
   );
-*/
-        </code></pre>
+*/</code></pre>
 
 
 
@@ -1424,29 +1300,23 @@ print_r($data);
         <h3 id="cookie-set">cookie_set ($key, $value, $expiration_date)</h3>
         <p>Set a cookie for a given amount of time.</p>
 
-        <pre><code class="language-php">
-$GLOBALS['app']->cookie_set(
+        <pre><code class="language-php">$GLOBALS['app']->cookie_set(
   'user_name',
   'Buzz',  // can be a string or an array or whatever
   1461619625  // optional, in unix time format, default is time() + 31536000000
-);
-        </code></pre>
+);</code></pre>
 
 
         <h3 id="cookie-get">cookie_get ($key)</h3>
         <p>Return the value of a given cookie.</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->cookie_get('user_name');  // Buzz
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->cookie_get('user_name');  // Buzz</code></pre>
 
 
         <h3 id="cookie-delete">cookie_delete ($key)</h3>
         <p>Delete a given cookie.</p>
 
-        <pre><code class="language-php">
-$GLOBALS['app']->cookie_delete('user_name');
-        </code></pre>
+        <pre><code class="language-php">$GLOBALS['app']->cookie_delete('user_name');</code></pre>
 
 
       </article>
@@ -1494,15 +1364,13 @@ $GLOBALS['app']->cookie_delete('user_name');
         <p>Sanitize parameters and insert array of data into database. Returns the id of the record
           created.</p>
 
-        <pre><code class="language-php">
-$new_id = db_insert("celestial_bodies", array(
+        <pre><code class="language-php">$new_id = db_insert("celestial_bodies", array(
   'name' => 'Luna',
   'classification' => 'moon',
   'comment' => 'Earth\'s moon, also commonly referred to as "the moon"'
 ));
 
-echo $new_id;
-        </code></pre>
+echo $new_id;</code></pre>
 
 
 
@@ -1512,8 +1380,7 @@ echo $new_id;
           the the data and a
           total number of results.</p>
 
-        <pre><code class="language-php">
-$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC LIMIT 8");
+        <pre><code class="language-php">$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC LIMIT 8");
 
 foreach ($planets['data'] as $p){
   echo $p['title'];
@@ -1521,25 +1388,20 @@ foreach ($planets['data'] as $p){
   // etc, etc
 }
 
-echo $planets['total'];  // 8
-        </code></pre>
+echo $planets['total'];  // 8</code></pre>
 
         <p>You can run a raw query (if you need to do joins or anything fancy)</p>
 
-        <pre><code class="language-php">
-$space_objects = db_find("", "SELECT title, classification FROM celestial_bodies WHERE id IS NOT NULL", array(
+        <pre><code class="language-php">$space_objects = db_find("", "SELECT title, classification FROM celestial_bodies WHERE id IS NOT NULL", array(
   'raw' => true
-));
-        </code></pre>
+));</code></pre>
 
         <p>If APC is enabled on your system, you can cache your queries</p>
 
-        <pre><code class="language-php">
-$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC", array(
+        <pre><code class="language-php">$planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title ASC", array(
   'cache' => true,
   'cache_length' => 120  // optional, in seconds, default is 60
-));
-        </code></pre>
+));</code></pre>
 
 
 
@@ -1548,12 +1410,10 @@ $planets = db_find("celestial_bodies", "classification = 'planet' ORDER BY title
         <h3 id="db-update">db_update ($table, $input, $criteria)</h3>
         <p>Sanitize parameters and update a database record.</p>
 
-        <pre><code class="language-php">
-db_update("celestial_bodies", array(
+        <pre><code class="language-php">db_update("celestial_bodies", array(
   'name' => 'Mars',
   'comment' => 'Research "The Phobos Incident" -- we are not alone'
-), "name='Marz'");
-        </code></pre>
+), "name='Marz'");</code></pre>
 
 
 
@@ -1561,9 +1421,7 @@ db_update("celestial_bodies", array(
         <h3 id="db-delete">db_delete ($table, $criteria)</h3>
         <p>Sanitize parameters and delete a given database record.</p>
 
-        <pre><code class="language-php">
-db_delete("celestial_bodies", "name='venice'");
-        </code></pre>
+        <pre><code class="language-php">db_delete("celestial_bodies", "name='venice'");</code></pre>
 
 
       </article>
@@ -1595,8 +1453,7 @@ db_delete("celestial_bodies", "name='venice'");
         <p>Send an plain text or html email (with mailgun api, if available, otherwise using php mail).
         </p>
 
-        <pre><code class="language-php">
-$GLOBALS['app']->email_send(array(
+        <pre><code class="language-php">$GLOBALS['app']->email_send(array(
   'to' => 'static@hexgirlfriend.com',
   'from' => 'sitemeister@partyphysics.com',
   'cc' => 'cc-address@partyphysics.com',  // optional
@@ -1605,14 +1462,12 @@ $GLOBALS['app']->email_send(array(
   'subject' => 'Send me an email',
   'html' => true,  // optional, message will be sent as plain text unless this is true
   'message' => 'Right now...&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;RIGHT NOW&lt;/u&gt;&lt;/b&gt;'
-));
-        </code></pre>
+));</code></pre>
 
 
         update docs: NOW YOU CAN USE TEMPLATES TO MAKE HTML EMAILS!
 
-        <pre><code class="language-php">
-$GLOBALS['app']->email_send(array(
+        <pre><code class="language-php">$GLOBALS['app']->email_send(array(
   'from' => 'static@hexgirlfriend.com',
   'to' => 'jonathan.youngblood@gmail.com',
 
@@ -1624,8 +1479,7 @@ $GLOBALS['app']->email_send(array(
     'email' => 'jonathan.youngblood@gmail.com'
   ),
 
-));
-        </code></pre>
+));</code></pre>
 
 
 
@@ -1633,9 +1487,7 @@ $GLOBALS['app']->email_send(array(
         <h3 id="h-client-ip">client_ip ()</h3>
         <p>Return the address of the computer making the current request.</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->client_ip();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->client_ip();</code></pre>
         <p>
            disclaimer about ip addresses and accuracy (we use a couple of redundant methods, but you can't really
           trust them in general because of the nature of how ip addresses work...easily spoofable, etc)
@@ -1652,9 +1504,7 @@ echo $GLOBALS['app']->client_ip();
         <h3 id="h-url-slug">url_slug ($string)</h3>
         <p>url_slug</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->url_slug();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->url_slug();</code></pre>
 
 
 
@@ -1664,9 +1514,7 @@ echo $GLOBALS['app']->url_slug();
         <h3 id="h-url-strip">url_strip ()</h3>
         <p>url_strip</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->url_strip();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->url_strip();</code></pre>
 
 
 
@@ -1674,9 +1522,7 @@ echo $GLOBALS['app']->url_strip();
         <h3 id="h-url-validate">url_validate ()</h3>
         <p>url_validate</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->url_validate();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->url_validate();</code></pre>
 
 
 
@@ -1686,9 +1532,7 @@ echo $GLOBALS['app']->url_validate();
         <h3 id="h-mysql-date">mysql_date ()</h3>
         <p>mysql_date</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->mysql_date();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->mysql_date();</code></pre>
 
 
 
@@ -1697,9 +1541,7 @@ echo $GLOBALS['app']->mysql_date();
         <h3 id="h-video-id">video_id ()</h3>
         <p>video_id</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->video_id();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->video_id();</code></pre>
 
 
 
@@ -1708,18 +1550,14 @@ echo $GLOBALS['app']->video_id();
         <h3 id="h-br2nl">br2nl ()</h3>
         <p>br2nl</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->br2nl();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->br2nl();</code></pre>
 
 
 
         <h3 id="h-pagination-query">pagination_query ()</h3>
         <p>pagination_query</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->pagination_query();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->pagination_query();</code></pre>
 
 
 
@@ -1727,9 +1565,7 @@ echo $GLOBALS['app']->pagination_query();
         <h3 id="h-pagination-links">pagination_links ()</h3>
         <p>pagination_links</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->pagination_links();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->pagination_links();</code></pre>
 
 
 
@@ -1739,9 +1575,7 @@ echo $GLOBALS['app']->pagination_links();
         <h3 id="h-array-encode">array_encode ()</h3>
         <p>array_encode</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->array_encode();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->array_encode();</code></pre>
 
 
 
@@ -1749,9 +1583,7 @@ echo $GLOBALS['app']->array_encode();
         <h3 id="h-array-decode">array_decode ()</h3>
         <p>array_decode</p>
 
-        <pre><code class="language-php">
-echo $GLOBALS['app']->array_decode();
-        </code></pre>
+        <pre><code class="language-php">echo $GLOBALS['app']->array_decode();</code></pre>
 
 
 
