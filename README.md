@@ -6,6 +6,9 @@
 check out the demo: https://jyoungblood.github.io/pocketdocs
 
 
+everything you need is in index.html
+if you want to remove the cdn links and use the local versions, that's fine too
+
 [ ] include a screenshot once the boilerplate is looking good
 
 HTML template for a single-page docs site. Incorporates bolt.css and code blocks w/ highlight.js

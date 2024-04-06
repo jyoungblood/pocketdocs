@@ -9,45 +9,38 @@
 html,
 body {
   height: 100%;
-  /* color: var(--text); */
-  /* background: var(--background-body); */
 }
 
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
     sans-serif;
-  color: var(--text);
-  background: var(--background-body);
 }
 
 
 
-/* // fixit better sizes (match tachyons) */
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
   font-size: 1.5rem;
 }
 
-h5 {
+h4 {
   font-size: 1.25rem;
-  font-weight: normal;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 h6 {
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 0.875rem;
 }
 
 h1,
@@ -72,23 +65,17 @@ th {
 
 
 
-
-
-
-
-
-
 hr {
-  border: 2px solid var(--border);
+  border: 2px solid #000;
 }
 
 
 
 
+code{
+  background: gainsboro;
+}
 
-
-
-code,
 pre {
   overflow-x: auto;
   display: block;
@@ -190,8 +177,6 @@ main{
 
 
 
-
-
 footer a{
   color: black;
   text-decoration: none;
@@ -208,13 +193,16 @@ article{
   margin-bottom: 3rem;
 }
 article h2, article h3{
-  /* fixit scrolltop padding instead? */
   padding-top: 1rem;
 }
 article h2{
   margin-bottom: 1rem;
   border-bottom: 0.25rem solid #000;
   padding-bottom: 1rem;
+}
+
+article ul{
+  padding-left: 1rem;
 }
 
 article ul li{
@@ -243,21 +231,6 @@ pre>code {
   transform: none;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -384,7 +357,7 @@ pre>code {
   }
 
   #home .subtitle {
-    font-size: 100%;
+    font-size: 1rem;
   }
 
 

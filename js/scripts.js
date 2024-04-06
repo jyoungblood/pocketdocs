@@ -9,9 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
           document.querySelectorAll('nav a').forEach(el => el.classList.remove('current'));
           document.querySelector('[href="#' + id + '"]').classList.add('current');
           history.pushState({}, '', '#' + id);
-        } else {
-          // console.log('remove current: ' + id);
-          // document.querySelector('[href="#' + id + '"]').classList.remove('current');
         }
       }
     });
