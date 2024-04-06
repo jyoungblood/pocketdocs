@@ -14,9 +14,21 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }, { rootMargin: "0px 0px -90% 0px" });
 
-  // Track all sections that have an `id` applied
   document.querySelectorAll('[id]').forEach((section) => {
     observer.observe(section);
   });
 
 });
+
+
+function dropdown_toggle() {
+  document.getElementById('sidebar').classList.toggle('mobile-hidden');
+}
+
+document.addEventListener('click', function (event) {
+  if (event.target.closest('main') || document.querySelector('nav').contains(event.target)) {
+    document.getElementById('sidebar').classList.add('mobile-hidden')
+  }
+}, false);
+
+

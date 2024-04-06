@@ -1,4 +1,3 @@
-
 *,
 ::after,
 ::before {
@@ -16,7 +15,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
     sans-serif;
 }
-
 
 
 h1 {
@@ -64,15 +62,12 @@ th {
 }
 
 
-
 hr {
   border: 2px solid #000;
 }
 
 
-
-
-code{
+code {
   background: gainsboro;
 }
 
@@ -91,58 +86,80 @@ pre>code {
 
 
 
-
-#sidebar{
+#sidebar {
   padding: 1rem;
+  width: 20%;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#sidebar .dd-icon {
+  display: none;
+}
+
+
+
+header {
+  position: relative;
+  border-bottom: 0.25rem solid #000;
+  padding-bottom: 0.5rem;
   width: 100%;
 }
 
-
-header{
+.title-container {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
-  border-bottom: 0.25rem solid #000;
-  padding-bottom: 0.5rem;
 }
-header .logo{
+
+.title-container .logo {
   width: 3rem;
   margin-left: 0.25rem;
 }
-header .title{
+
+.title-container .title {
   margin-left: 0.5rem;
   line-height: 125%;
 }
-header .title a span{
+
+.title-container .title a span {
   display: block;
   font-size: 90%;
 }
-header .title a strong{
+
+.title-container .title a strong {
   font-size: 125%;
 }
 
 
-header a, nav a{
+header a,
+nav a {
   color: #000;
   text-decoration: none;
 }
 
 
-nav ul{
+nav {
+  margin-top: 0.5rem;
+}
+
+nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-nav ul a{
+
+nav ul a {
   font-weight: bold;
 }
 
-nav li{
+nav li {
   margin-bottom: 0.25rem;
 }
 
-
-nav ul ul a{
+nav ul ul a {
   font-weight: normal;
 }
 
@@ -151,7 +168,8 @@ nav a {
   padding: 0.25rem;
   font-size: 0.9rem;
 }
-nav a:hover{
+
+nav a:hover {
   background: rgba(0, 0, 0, 0.025);
 }
 
@@ -159,29 +177,30 @@ nav a.current {
   background: rgba(0, 0, 0, 0.1);
 }
 
-nav ul ul a{
+nav ul ul a {
   padding-left: 0.75rem;
   font-size: 0.8rem;
 }
 
 
 
-main{
+main {
   height: 100%;
-  width: 100%;
-  padding: 1rem;
+  width: 80%;
+  margin-left: 20%;
+  padding: 1rem 1rem 1rem 0;
   line-height: 1.5rem;
 }
 
 
 
 
-
-footer a{
+footer a {
   color: black;
   text-decoration: none;
 }
-footer a:hover{
+
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -189,23 +208,26 @@ footer a:hover{
 
 
 
-article{
+article {
   margin-bottom: 3rem;
 }
-article h2, article h3{
+
+article h2,
+article h3 {
   padding-top: 1rem;
 }
-article h2{
+
+article h2 {
   margin-bottom: 1rem;
   border-bottom: 0.25rem solid #000;
   padding-bottom: 1rem;
 }
 
-article ul{
+article ul {
   padding-left: 1rem;
 }
 
-article ul li{
+article ul li {
   margin-bottom: 0.5rem;
 }
 
@@ -214,7 +236,7 @@ article pre {
 }
 
 
-footer{
+footer {
   text-align: right;
   padding: 1rem 0;
 }
@@ -240,7 +262,7 @@ pre>code {
 
 
 
-#home{
+#home {
   height: 100%;
   position: relative;
   background: gainsboro;
@@ -250,19 +272,20 @@ pre>code {
   text-align: center;
 }
 
-#home h1{
-  font-size: 2rem;
-  margin-bottom: .5rem;
-}
-#home .subtitle{
-  margin-bottom: 3rem;
-  font-size: 0.85rem;
-}
-
-#home .download-button{
+#home h1 {
   margin-bottom: 1.5rem;
 }
-#home .download-button a{
+
+#home .subtitle {
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+#home .download-button {
+  margin-bottom: 1.5rem;
+}
+
+#home .download-button a {
   background: black;
   color: white;
   text-decoration: none;
@@ -272,20 +295,20 @@ pre>code {
   box-sizing: border-box;
 }
 
-#home .source-link a{
+#home .source-link a {
   color: black;
   text-decoration: none;
   display: inline-block;
   vertical-align: middle;
 }
 
-#home .source-link a svg{
+#home .source-link a svg {
   height: 1.15rem;
   display: inline-block;
   vertical-align: middle;
 }
 
-#home .source-link a span{
+#home .source-link a span {
   font-size: 0.7rem;
   display: inline-block;
   vertical-align: middle;
@@ -301,30 +324,12 @@ pre>code {
 
 
 
-/* 		MEDIUM		*/
-@media screen and (min-width: 48em) and (max-width: 64em){
-
-}
 
 
 
 /* 		NOT SMALL		*/
-@media screen and (min-width: 48em){
+@media screen and (min-width: 48em) {
 
-  #sidebar{
-    width: 20%;
-    height: 100%;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  main {
-    width: 80%;
-    margin-left: 20%;
-    padding: 1rem 1rem 1rem 0;
-  }
 
   .columns {
     display: flex;
@@ -338,7 +343,7 @@ pre>code {
 
   /* ALT columns */
   /* 
-  .columns{
+  .columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
@@ -351,15 +356,81 @@ pre>code {
     width: 50%;
   }
 
-  #home h1{
-    font-size: 3rem; 
-    margin-bottom: 1.5rem;
-  }
-
-  #home .subtitle {
-    font-size: 1rem;
-  }
-
 
 }
 
+
+
+
+
+
+
+/*      SMALL     */
+
+@media only screen and (min-device-width: 320px) and (max-device-width : 480px) {
+
+  #sidebar {
+    width: 100%;
+    height: auto;
+    background: white;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .2);
+  }
+
+  #sidebar.mobile-hidden {
+    box-shadow: none;
+  }
+
+  .mobile-hidden nav {
+    display: none;
+  }
+
+  #sidebar .dd-icon {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+  }
+
+  #sidebar .dd-icon svg {
+    width: 2em;
+    height: 2em;
+  }
+
+  .mobile-hidden .dd-icon .dd-open,
+  .dd-icon .dd-close {
+    display: block;
+  }
+
+  .mobile-hidden .dd-icon .dd-close,
+  .dd-icon .dd-open {
+    display: none;
+  }
+
+  #sidebar nav {
+    margin-bottom: -0.5rem;
+  }
+
+  h2,
+  h3 {
+    scroll-margin-top: 5rem;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+  }
+
+  #home .subtitle {
+    font-size: 0.85rem;
+  }
+
+  main {
+    width: 100%;
+    padding: 1rem;
+    margin-left: 0;
+  }
+
+}
