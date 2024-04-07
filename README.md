@@ -2,83 +2,29 @@
 ### It's just a file
 
 
+Are you looking for an attractive semantic HTML template for writing single-page documentation? 
 
-are you looking for an attractive semantic html template for writing single-page documentation? you're going to love this!
+You're going to love this!
 
-
-check out the demo: https://jyoungblood.github.io/pocketdocs
-
-
-You don't always need docusaurus or whatever, esp when you're starting something
-  You need a simple easy thing to get started
-   Docs are always put off for last and it seems so daunting, it's a lot easier if you have a simple easy way to get something useful and attractive
-
-  it's just html, so the sky's the limit on what you COULD do, this just gives you a nice starting point to have something nice without any effort (just as easy as writing a readme)
-
-the easiest way to start a nice looking docs site
-  good starting point for low-effort nice-looking single page docs
-  a simple skeleton that you can build something nice on
-  simple static thing you can dev locally, push to gh pages
+Check out the demo: https://jyoungblood.github.io/pocketdocs
 
 
-
----
-
+Writing documentation can be difficult, especially when many "turn-key" solutions require an involved installation and configuration process. It's often easier to start with a single HTML file, but even then it's tempting to get lost in the details building the base structure and configuring defaults needed to create something nice.
 
 
-
-just add html
-...we've taken care of the basics so you can get started easily
-
-easy install / setup
-it's just a single file, ext css & js included from cdn
-assets load from cdn, so it's just a single file, sensible default config
+Pocket Docs provides a sensible default configuration that lets you focus on writing content. It's a single static HTML file that you can turn into whatever you need it to be...and it looks good without any effort.
 
 
-easy customization
-it's just basic/vanilla css & js, add your own whatever, customize to your hearts content, make it yours
-easily extendable (add however much content) it's just html! put it on any server! (perfect for gh pages, btw)
+- ** Just add html ** - We've taken care of the basic structure so you can get started easily. Add your content as semantic HTML (almost as easy as writing Markdown).
 
-nice defaults
-Sidebar with auto-highlighting, responsive structure (sidebar turns into dropdown on mobile), AND A NICE DEFAULT DESIGN
+- ** Minimal architecture ** - It's [just a single file](https://github.com/jyoungblood/pocketdocs/blob/master/index.html), external CSS & JS libraries included from CDN. Ready to deploy in any environment.
 
-future improvements planned
-- planned support for easy theme w/ css vars
-automatically generate menu based on content
-even better turn-key code highlighter experience
+- ** Sensible defaults ** - Includes syntax highlighting, responsive sidebar/dropdown navigation, scroll-based nav highlighting, AND A NICE DEFAULT DESIGN
 
+- ** Easy customization ** - Made with basic HTML, CSS, and JS. Add any library or your own code to make it what you want it to be.
 
+- ** Future improvements planned ** - upcoming support for easy themes using CSS variables, automatically generate navigation based on content, even better code highlighting experience
 
-
-
-<li>semantic html document structure, simple straightforward architecture ... almost easy as writing markdown (html is semantic, doesn’t have extra classes</li>
-
-
-<li>highlight.js for syntax highlighting</li>
-
-<li>Nav that keeps up with scrolling</li>
-
-<li>Single page like KNEX docs</li>
-
-<li>Themeable (at some point...easy to edit for now)</li>
-
-<li>bolt.css simple basic reset, also :root css vars</li>
-
-<li>It's just a single file!</li>
-
-<li>Looks nice (and normal) without a lot of work ... EASY TO USE (& customize) / work with ... simple static thing you can dev locally, push to gh pages * for making ~beautiful~ single-page docs sites</li>
-
-
-
-
----
-
----
-
-
-
-## GETTING STARTED
-I'm sure you can figure it out. It's [just a file](https://github.com/jyoungblood/pocketdocs/blob/master/index.html), acquire and use it as you see fit.
 
 
 
