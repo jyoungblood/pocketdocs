@@ -16,7 +16,7 @@ Pocket Docs provides a sensible default configuration that lets you focus on wri
 
 - **Just add HTML** - We've taken care of the basic structure so you can get started easily. Add your content as semantic HTML (almost as easy as writing Markdown).
 
-- **Minimal architecture** - It's [just a single file](https://github.com/jyoungblood/pocketdocs/blob/master/index.html), external CSS & JS libraries included from CDN. Ready to deploy in any environment.
+- **Minimal architecture** - [It's a single file](https://github.com/jyoungblood/pocketdocs/blob/master/index.html), external CSS & JS libraries included from CDN. Ready to deploy in any environment.
 
 - **Sensible defaults** - Includes syntax highlighting, responsive sidebar/dropdown navigation, scroll-based nav highlighting, AND A NICE DEFAULT DESIGN
 
