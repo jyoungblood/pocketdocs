@@ -9,7 +9,7 @@ You're going to love this!
 Check out the demo: https://jyoungblood.github.io/pocketdocs
 
 
-## An Expedient Panacea for Documentation
+## An expedient panacea for documentation
 
 Writing documentation can be difficult, especially when many "turn-key" solutions require an involved installation and configuration process. It's often easier to start with a single HTML file, but even then it's tempting to get lost in the details building the base structure and configuring defaults needed to create something nice.
 
