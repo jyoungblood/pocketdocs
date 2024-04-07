@@ -9,8 +9,9 @@ You're going to love this!
 Check out the demo: https://jyoungblood.github.io/pocketdocs
 
 
-Writing documentation can be difficult, especially when many "turn-key" solutions require an involved installation and configuration process. It's often easier to start with a single HTML file, but even then it's tempting to get lost in the details building the base structure and configuring defaults needed to create something nice.
+## An Expedient Panacea for Documentation
 
+Writing documentation can be difficult, especially when many "turn-key" solutions require an involved installation and configuration process. It's often easier to start with a single HTML file, but even then it's tempting to get lost in the details building the base structure and configuring defaults needed to create something nice.
 
 Pocket Docs provides a sensible default configuration that lets you focus on writing content. It's a single static HTML file that you can develop to meet your specific needs...and it looks good without any effort!
 
