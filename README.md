@@ -77,14 +77,14 @@ even better turn-key code highlighter experience
 
 
 
-### GETTING STARTED
+## GETTING STARTED
 I'm sure you can figure it out. It's [just a file](https://github.com/jyoungblood/pocketdocs/blob/master/index.html), acquire and use it as you see fit.
 
 
 
 
 
-### RESOURCES
+## RESOURCES
 
 * [Highlight.js - Basic Usage](https://highlightjs.readthedocs.io/en/latest/readme.html#basic-usage)
 
