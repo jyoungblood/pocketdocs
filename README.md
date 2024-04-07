@@ -29,7 +29,7 @@ Pocket Docs provides a sensible default configuration that lets you focus on wri
 
 
 
-## RESOURCES
+## Resources
 
 * [Highlight.js - Basic Usage](https://highlightjs.readthedocs.io/en/latest/readme.html#basic-usage)
 
