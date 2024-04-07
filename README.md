@@ -1,5 +1,5 @@
 # Pocket Docs
-### It's just a file
+## It's just a file
 
 
 Are you looking for an attractive semantic HTML template for writing single-page documentation? 
