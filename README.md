@@ -34,7 +34,7 @@ Pocket Docs provides a sensible default configuration that lets you focus on wri
 
 * [Highlight.js - Basic Usage](https://highlightjs.readthedocs.io/en/latest/readme.html#basic-usage)
 
-* Highlight.js Themes
+* Highlight.js themes
   * Using Catpuccin "Mocha" theme for default - https://catppuccin.github.io/highlightjs/
   * https://draculatheme.com/highlightjs
   * https://github.com/highlightjs/base16-highlightjs
@@ -44,8 +44,8 @@ Pocket Docs provides a sensible default configuration that lets you focus on wri
   * Using this plugin for copying code blocks to clipboard
   * Default styles - https://github.com/arronhunt/highlightjs-copy/blob/master/styles/highlightjs-copy.css
 
-
-* [React Icons](https://react-icons.github.io/)
-* [MDN - HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-* [CSS color names](http://davidbau.com/colors/)
+* HTML development
+  * [MDN - HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+  * [CSS color names](http://davidbau.com/colors/)
+  * [React Icons](https://react-icons.github.io/)
 
